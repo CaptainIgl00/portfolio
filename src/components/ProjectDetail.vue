@@ -71,7 +71,8 @@ const markdownContent = ref('');
 
 onMounted(async () => {
   try {
-    const response = await fetch(`/projects/markdown/${props.project.markdownFile}`);
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const response = await fetch(`${baseUrl}projects/markdown/${props.project.markdownFile}`);
     const markdown = await response.text();
     markdownContent.value = marked(markdown);
   } catch (error) {
@@ -500,25 +501,37 @@ onMounted(async () => {
   }
 
   .project-header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-image {
+    margin: 1.5rem -1rem;
+    border-radius: 0.5rem;
   }
 
   .highlights-grid {
     grid-template-columns: 1fr;
   }
 
+  .project-highlights {
+    padding: 1.5rem;
+  }
+
   .project-highlights h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
   }
 
   .project-links {
     flex-direction: column;
+    margin: 1.5rem 0;
   }
 
   .btn {
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
+    padding: 0.875rem;
   }
 
   :deep(.markdown-body) {
@@ -526,13 +539,72 @@ onMounted(async () => {
   }
 
   :deep(.markdown-body h2) {
-    font-size: 2rem;
-    margin: 3rem 0 1rem;
+    font-size: 1.75rem;
+    margin: 2rem 0 1rem;
   }
 
   :deep(.markdown-body h3) {
-    font-size: 1.5rem;
-    margin: 2rem 0 1rem;
+    font-size: 1.25rem;
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  :deep(.markdown-body pre) {
+    margin: 1.5rem -1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  :deep(.markdown-body img) {
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+  }
+
+  :deep(.markdown-body blockquote) {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+  }
+
+  :deep(.markdown-body ul) {
+    margin: 1.5rem 0;
+  }
+
+  :deep(.markdown-body li) {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-detail {
+    padding: 0.75rem;
+  }
+
+  .project-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .tag {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .back-link {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  :deep(.markdown-body) {
+    font-size: 0.9375rem;
   }
 }
 </style> 
