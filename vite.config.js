@@ -5,4 +5,10 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   base: '/portfolio/',
   plugins: [vue()],
+  server: {
+    headers: {
+      'Permissions-Policy': 'interest-cohort=()',
+      'X-Frame-Options': 'DENY'
+    }
+  }
 })
