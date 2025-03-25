@@ -77,7 +77,7 @@ export const projects = [
     tags: ["RF", "Hardware", "IoT", "Frontend", "Backend"],
     demoLink: null,
     codeLink: null,
-    image: "/projects/diag.png",
+    image: "/portfolio/projects/diag.png",
     markdownFile: "uwb.md",
     slug: "uwb"
   },
