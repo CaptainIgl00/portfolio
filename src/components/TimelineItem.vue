@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="relative pl-8 card transition-all duration-300 hover:translate-x-2 ml-4"
+    class="relative pl-8 ml-4 transition-all duration-300 hover:translate-x-2"
     :class="{ 'bg-primary-300/5 border-primary-300/10 shadow-primary-300/10 shadow-lg': featured }"
   >
     <div 

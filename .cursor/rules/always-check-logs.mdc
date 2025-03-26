@@ -1,0 +1,7 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Always check browser logs using the browser tool at the end of a conversation
