@@ -1,6 +1,8 @@
 ## Contexte
 **FreeHopper** est un projet R&D innovant d'Airbus Defense & Space visant à démontrer la faisabilité du **Beam Hopping** pour les communications satellites. Cette technologie révolutionnaire permet à un satellite de couvrir dynamiquement plusieurs zones géographiques en "sautant" d'une zone à l'autre, offrant une flexibilité inédite dans l'allocation des ressources de communication.
 
+![Beam Hopping](/portfolio/projects/beam-hopping.png)
+
 ## Challenge Initial
 Le projet faisait face à des défis majeurs :
 - Banc de test complexe avec de multiples composants peu fiables
@@ -14,8 +16,10 @@ Le projet faisait face à des défis majeurs :
 ### Architecture DevOps
 Grâce à l'**IDE Cursor** et son IA intégrée, j'ai pu concevoir et implémenter une architecture microservices robuste en un temps record :
 
+![Architecture](/portfolio/projects/freehopper-architecture.png)
+
 - **Frontend** :
-  - Interface utilisateur moderne avec **VueJS** et **Vuetify**
+  - Interface utilisateur moderne avec **Vite.js**, **VueJS** et **TailwindCSS**
   - Configuration dynamique des profils de test
   - Visualisation en temps réel des données
   - Interface intuitive pour le lancement des tests
@@ -28,13 +32,13 @@ Grâce à l'**IDE Cursor** et son IA intégrée, j'ai pu concevoir et implément
 
 - **Monitoring** :
   - Dashboards **Grafana** pour la visualisation des métriques
-  - Collecte et stockage des données de test
+  - Collecte et stockage des données de test dans **InfluxDB**
   - Monitoring temps réel des performances
 
 ### Containerisation et Orchestration
 - Mise en place d'une architecture **Docker Compose** :
   - Conteneurisation de tous les services
-  - Déploiement sur un serveur Ubuntu recyclé
+  - Déploiement sur un serveur Ubuntu
   - Configuration réseau optimisée
   - Persistance des données
   - Scripts de déploiement automatisés
@@ -52,7 +56,7 @@ Grâce à l'**IDE Cursor** et son IA intégrée, j'ai pu concevoir et implément
 - Docker & Docker Compose
 - Ubuntu Server
 - Git & GitLab
-- Cursor IDE & GitHub Copilot
+- Cursor IDE
 
 ### Frontend
 - VueJS
@@ -64,12 +68,10 @@ Grâce à l'**IDE Cursor** et son IA intégrée, j'ai pu concevoir et implément
 - FastAPI (Python)
 - Golang (Scrappers)
 - SQLAlchemy
-- Redis
 
 ### Monitoring
 - Grafana
 - InfluxDB
-- Prometheus
 
 ## Résultats Exceptionnels
 
@@ -122,4 +124,3 @@ Le système développé a transformé FreeHopper :
 - Ajout de tests automatisés supplémentaires
 - Extension du monitoring
 - Intégration de nouvelles métriques RF
-- Développement d'analyses prédictives 

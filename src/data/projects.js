@@ -4,7 +4,7 @@ export const projects = [
     description: "Développement et déploiement d'un site web pour un restaurant traditionnel français. Stack technique : Nuxt 3, FastAPI, Directus CMS, PostgreSQL, Docker, Traefik.",
     tags: ["Web", "DevOps", "Backend", "Frontend"],
     demoLink: "https://brasseriechezju.com",
-    codeLink: "https://github.com/captainigl00/brasserie-chez-ju",
+    codeLink: "https://github.com/CaptainIgl00/BrasserieChezJu",
     image: "https://brasseriechezju.com/_ipx/f_webp&q_90/images/menu/planche_charcuterie.jpg",
     markdownFile: "brasserie-chez-ju.md",
     slug: "brasserie-chez-ju",
@@ -66,7 +66,7 @@ export const projects = [
   {
     title: "FreeHopper - Airbus Defense & Space",
     description: "Développement d'un ensemble de services Docker pour la gestion d'appareils de mesures et d'automatisation de tests.",
-    tags: ["DevOps", "Web", "IoT", "Backend"],
+    tags: ["DevOps", "Web", "IoT", "Backend", "RF"],
     demoLink: "https://connectivity.esa.int/projects/hts-free-hopper",
     codeLink: null,
     image: "https://connectivity.esa.int/sites/default/files/inline-images/HTSFreeHopper_logo.png",
