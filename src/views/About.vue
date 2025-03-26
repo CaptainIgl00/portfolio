@@ -18,13 +18,13 @@
       <!-- Présentation -->
       <div class="mb-16">
         <ProfileCard title="Ingénieur DevOps & Systèmes Communicants">
-          Diplômé de l'<span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">ENSEEIHT</span> en <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">télécommunications</span>, je suis un ingénieur spécialisé <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">DevOps</span> passionné par l'automatisation et l'optimisation des processus de développement. <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Flexible</span>, <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">curieux</span> et <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">autonome</span>, je m'adapte rapidement aux nouveaux environnements techniques. Mon expertise couvre l'ensemble de la chaîne DevOps, du développement au déploiement, en passant par la conteneurisation et l'orchestration.
+          Diplômé de l'<span class="highlight-text">ENSEEIHT</span> en <span class="highlight-text">télécommunications</span>, je suis un ingénieur spécialisé <span class="highlight-text">DevOps</span> passionné par l'automatisation et l'optimisation des processus de développement. <span class="highlight-text">Flexible</span>, <span class="highlight-text">curieux</span> et <span class="highlight-text">autonome</span>, je m'adapte rapidement aux nouveaux environnements techniques. Mon expertise couvre l'ensemble de la chaîne DevOps, du développement au déploiement, en passant par la conteneurisation et l'orchestration.
         </ProfileCard>
       </div>
 
       <!-- Compétences -->
       <section class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent text-center">Compétences Techniques</h2>
+        <h2 class="section-title">Compétences Techniques</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <SkillCard>
             <template #title>DevOps & Cloud</template>
@@ -57,101 +57,255 @@
 
       <!-- Expérience -->
       <section class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent text-center">Expérience Professionnelle</h2>
+        <h2 class="section-title">Expérience Professionnelle</h2>
         <div class="relative py-8 grid gap-8">
           <div class="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary-300/30 to-primary-300/10"></div>
           
-          <TimelineItem date="Depuis novembre 2023" :featured="true">
+          <TimelineItem 
+            date="Depuis janvier 2025" 
+            :featured="true"
+            blog-path="poleos"
+          >
             <template #title>
-              Ingénieur <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">DevOps</span> - <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Airbus Defense & Space</span>
+              Projet <span class="highlight-text">POLEOS</span> - <span class="highlight-text">Airbus Defense & Space</span>
             </template>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
                 <div class="mb-4 text-slate-200">
-                  <p class="mb-2 text-slate-400">Lead DevOps sur le projet POLEOS et responsable de la modernisation de l'infrastructure. Mise en place d'une culture DevSecOps et d'une approche Cloud-Native.</p>
+                  <p class="mb-2 text-slate-400">Modernisation et automatisation du segment sol des satellites d'observation de la Terre livrés à la Pologne. Implémentation de solutions innovantes basées sur les LLMs et les pratiques DevOps modernes.</p>
                 </div>
-                <div class="mb-2 text-slate-200 font-medium">Infrastructure & Sécurité</div>
+                <div class="mb-2 text-slate-200 font-medium">DevOps & Automatisation</div>
                 <ul class="space-y-2 list-none pl-5">
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Mise en place d'une <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Infrastructure as Code</span> avec Ansible</li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Déploiement d'un cluster <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Kubernetes</span> hautement disponible</li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Implémentation de politiques <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">DevSecOps</span> et hardening</li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Mise en place de <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">GitLab CI/CD</span> pour le déploiement continu</li>
+                  <li class="list-item-tech">Mise en place d'une approche <span class="highlight-text">Infrastructure as Code</span> avec Ansible</li>
+                  <li class="list-item-tech">Développement de pipelines <span class="highlight-text">GitLab CI</span> et déploiement de GitLab Runners</li>
+                  <li class="list-item-tech">Conteneurisation avec <span class="highlight-text">Docker</span> et orchestration via <span class="highlight-text">Kubernetes</span></li>
+                  <li class="list-item-tech">Implémentation de pratiques <span class="highlight-text">GitOps</span> et politiques <span class="highlight-text">DevSecOps</span></li>
                 </ul>
               </div>
               <div>
-                <div class="mb-2 text-slate-200 font-medium">Innovation & Automatisation</div>
+                <div class="mb-2 text-slate-200 font-medium">Innovation & IA</div>
                 <ul class="space-y-2 list-none pl-5">
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Architecture microservices avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Docker</span> et <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Kubernetes</span></li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Développement d'APIs avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">FastAPI</span> et <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">SQLAlchemy</span></li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Intégration de <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">LLMs</span> pour l'automatisation des tâches</li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Monitoring avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Prometheus</span> et <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Grafana</span></li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Optimisation des pipelines CI/CD avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">GitLab Runners</span></li>
+                  <li class="list-item-tech">Intégration de <span class="highlight-text">modèles LLM</span> via Ollama pour l'assistance au développement</li>
+                  <li class="list-item-tech">Développement d'un générateur de documentation intelligent avec <span class="highlight-text">Langchain</span></li>
+                  <li class="list-item-tech">Développement d'outils Cloud-Native avec <span class="highlight-text">FastAPI</span> et <span class="highlight-text">SQLAlchemy</span></li>
+                  <li class="list-item-tech">Monitoring avancé avec <span class="highlight-text">Grafana</span> et métriques personnalisées</li>
+                  <li class="list-item-tech">Hardening des VM <span class="highlight-text">Ubuntu</span> et <span class="highlight-text">Red Hat</span></li>
                 </ul>
               </div>
             </div>
           </TimelineItem>
-          
-          <TimelineItem date="2022 - 2023">
+
+          <TimelineItem 
+            date="Mars - Décembre 2024"
+            blog-path="freehopper"
+          >
             <template #title>
-              Électronicien Produits - <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Continental Automotive</span>
+              Projet <span class="highlight-text">FreeHopper</span> - <span class="highlight-text">Airbus Defense & Space</span>
+            </template>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <div class="mb-4 text-slate-200">
+                  <p class="mb-2 text-slate-400">Projet R&D démontrant la faisabilité du Beam Hopping pour les communications satellites. Développement d'une architecture microservices moderne pour l'automatisation des tests RF.</p>
+                </div>
+                <div class="mb-2 text-slate-200 font-medium">Architecture & DevOps</div>
+                <ul class="space-y-2 list-none pl-5">
+                  <li class="list-item-tech">Développement frontend avec <span class="highlight-text">VueJS</span> et <span class="highlight-text">TailwindCSS</span></li>
+                  <li class="list-item-tech">API REST avec <span class="highlight-text">FastAPI</span> et scrappers en <span class="highlight-text">Golang</span></li>
+                  <li class="list-item-tech">Architecture microservices avec <span class="highlight-text">Docker Compose</span></li>
+                  <li class="list-item-tech">Déploiement sur serveur <span class="highlight-text">Ubuntu</span> avec scripts automatisés</li>
+                </ul>
+              </div>
+              <div>
+                <div class="mb-2 text-slate-200 font-medium">Automatisation & Monitoring</div>
+                <ul class="space-y-2 list-none pl-5">
+                  <li class="list-item-tech">Framework de test complet avec configuration dynamique</li>
+                  <li class="list-item-tech">Monitoring temps réel avec <span class="highlight-text">Grafana</span> et <span class="highlight-text">InfluxDB</span></li>
+                  <li class="list-item-tech">Réduction du temps de test de 30 minutes à quelques clics</li>
+                  <li class="list-item-tech">Développement accéléré avec <span class="highlight-text">Cursor IDE</span></li>
+                  <li class="list-item-tech">Gestion multi-protocoles (HTTP, SPI, USB, propriétaire)</li>
+                </ul>
+              </div>
+            </div>
+          </TimelineItem>
+
+          <TimelineItem 
+            date="Janvier - Mars 2024"
+            blog-path="astrocast"
+          >
+            <template #title>
+              Projet <span class="highlight-text">Astrocast</span> - <span class="highlight-text">Airbus Defense & Space</span>
+            </template>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <div class="mb-4 text-slate-200">
+                  <p class="mb-2 text-slate-400">Modernisation de l'infrastructure logicielle embarquée pour les satellites IoT d'Astrocast. Migration et optimisation d'un système legacy Petalinux vers une architecture moderne et maintenable.</p>
+                </div>
+                <div class="mb-2 text-slate-200 font-medium">DevOps & Modernisation</div>
+                <ul class="space-y-2 list-none pl-5">
+                  <li class="list-item-tech">Mise en place d'environnements <span class="highlight-text">Docker</span> pour Ubuntu 16</li>
+                  <li class="list-item-tech">Migration vers <span class="highlight-text">GitLab</span> avec implémentation de submodules</li>
+                  <li class="list-item-tech">Standardisation de l'environnement de développement</li>
+                  <li class="list-item-tech">Configuration reproductible et isolation des dépendances</li>
+                </ul>
+              </div>
+              <div>
+                <div class="mb-2 text-slate-200 font-medium">Embedded & Documentation</div>
+                <ul class="space-y-2 list-none pl-5">
+                  <li class="list-item-tech">Optimisation du code <span class="highlight-text">C++</span> et <span class="highlight-text">Petalinux</span></li>
+                  <li class="list-item-tech">Rédaction exhaustive de documentation technique</li>
+                  <li class="list-item-tech">Résolution de bugs critiques et refactoring</li>
+                  <li class="list-item-tech">Standardisation des processus <span class="highlight-text">DevOps</span></li>
+                </ul>
+              </div>
+            </div>
+          </TimelineItem>
+
+          <TimelineItem 
+            date="Septembre - Décembre 2023"
+            blog-path="madiran"
+          >
+            <template #title>
+              Projet <span class="highlight-text">TELEO</span> - <span class="highlight-text">Airbus Defense & Space</span> & <span class="highlight-text">ONERA</span>
+            </template>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <div class="mb-4 text-slate-200">
+                  <p class="mb-2 text-slate-400">Développement d'une architecture microservices pour les communications optiques laser entre satellites et stations sol. Collaboration étroite entre Airbus DS et l'ONERA pour démontrer la faisabilité des télécommunications optiques haute performance.</p>
+                </div>
+                <div class="mb-2 text-slate-200 font-medium">Architecture & Communication</div>
+                <ul class="space-y-2 list-none pl-5">
+                  <li class="list-item-tech">Architecture microservices <span class="highlight-text">Docker</span> pour liaison GS-MCC</li>
+                  <li class="list-item-tech">Support multi-protocoles (<span class="highlight-text">CCSDS</span>, <span class="highlight-text">InfluxDB</span>)</li>
+                  <li class="list-item-tech">Transmission temps réel des données météo et métriques</li>
+                  <li class="list-item-tech">Interface <span class="highlight-text">PyQt6</span> pour pilotage des tests</li>
+                </ul>
+              </div>
+              <div>
+                <div class="mb-2 text-slate-200 font-medium">Data Engineering & Tests</div>
+                <ul class="space-y-2 list-none pl-5">
+                  <li class="list-item-tech">Migration <span class="highlight-text">Matlab</span> vers <span class="highlight-text">Python</span></li>
+                  <li class="list-item-tech">Tests unitaires avec <span class="highlight-text">Pytest</span> et <span class="highlight-text">Paramiko</span></li>
+                  <li class="list-item-tech">Visualisation <span class="highlight-text">Matplotlib</span> et GIFs explicatifs</li>
+                  <li class="list-item-tech">Monitoring <span class="highlight-text">Grafana</span> temps réel</li>
+                </ul>
+              </div>
+            </div>
+          </TimelineItem>
+
+          <TimelineItem 
+            date="Juin 2022 - Septembre 2023"
+            blog-path="uwb"
+          >
+            <template #title>
+              Apprenti Ingénieur R&D RF - <span class="highlight-text">Continental Automotive</span>
             </template>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
                 <div class="mb-4 text-slate-400">
-                  Mise en place d'une approche DevOps pour l'automatisation des bancs de tests RF et l'optimisation des processus de développement.
+                  Développement de bancs de tests RF innovants et dépôt d'un brevet sur la technologie Ultra Wide Band (UWB). Conception et implémentation de solutions d'automatisation pour la caractérisation RF.
                 </div>
-                <div class="mb-2 text-slate-200 font-medium">Automatisation & CI/CD</div>
+                <div class="mb-2 text-slate-200 font-medium">Innovation & Bancs de Test</div>
                 <ul class="space-y-2 list-none pl-5">
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Développement d'une pipeline <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">CI/CD</span> pour les tests automatisés</li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Conteneurisation des environnements de test avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Docker</span></li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Optimisation des performances (5 jours → 5 minutes)</li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Dépôt d'un <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">brevet</span> sur l'automatisation RF</li>
+                  <li class="list-item-tech">Dépôt d'un <span class="highlight-text">brevet UWB</span> avec preuve de concept IA</li>
+                  <li class="list-item-tech">Banc de test <span class="highlight-text">BLE</span> pour capteurs TPMS</li>
+                  <li class="list-item-tech">Automatisation chambre anéchoïque avec <span class="highlight-text">Arduino</span> et <span class="highlight-text">Rhode&Schwarz</span></li>
+                  <li class="list-item-tech">Cartographie UWB véhicule avec <span class="highlight-text">LiDAR</span> et <span class="highlight-text">CAN Bus</span></li>
                 </ul>
               </div>
               <div>
-                <div class="mb-2 text-slate-200 font-medium">Infrastructure & Monitoring</div>
+                <div class="mb-2 text-slate-200 font-medium">Architecture & Performance</div>
                 <ul class="space-y-2 list-none pl-5">
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Mise en place d'un monitoring temps réel avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Grafana</span></li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Développement d'APIs REST avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">FastAPI</span></li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Intégration <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Git</span> et gestion des versions</li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Automatisation avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Python</span> et <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Shell</span></li>
+                  <li class="list-item-tech">Interface temps réel avec <span class="highlight-text">PyQt6</span> et <span class="highlight-text">PyQtGraph</span></li>
+                  <li class="list-item-tech">Optimisation par <span class="highlight-text">multithreading</span> et <span class="highlight-text">NumPy</span></li>
+                  <li class="list-item-tech">Tests autonomes longue durée (24/7)</li>
+                  <li class="list-item-tech">Algorithmes d'interpolation avancés</li>
+                  <li class="list-item-tech">Visualisation de données RF en temps réel</li>
                 </ul>
               </div>
             </div>
           </TimelineItem>
+
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section class="mb-16">
+        <h2 class="section-title">Certifications</h2>
+        <div class="flex justify-center">
+          <div class="w-full md:w-96">
+            <SkillCard>
+              <template #title>Python <span class="text-primary-300">•</span> LinkedIn Skills Assessment</template>
+              <div class="text-center text-slate-400 mb-4">
+                <p class="mb-2">Top 5% Mondial</p>
+                <p class="text-sm">2023</p>
+              </div>
+              <div class="text-slate-400 mb-4 text-center">
+                Certification technique validant une expertise approfondie en Python via un test exigeant couvrant l'ensemble des aspects du langage.
+              </div>
+              <ul class="space-y-2 list-none pl-5">
+                <li class="list-item-tech">Concepts avancés du langage</li>
+                <li class="list-item-tech">Programmation orientée objet</li>
+                <li class="list-item-tech">Gestion de la mémoire et performances</li>
+                <li class="list-item-tech">Bibliothèques standards et écosystème</li>
+              </ul>
+            </SkillCard>
+          </div>
         </div>
       </section>
 
       <!-- Projets Personnels -->
       <section class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent text-center">Projets Personnels</h2>
+        <h2 class="section-title">Projets Personnels</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <SkillCard>
-            <template #title>Infrastructure Domotique</template>
+            <template #title>
+              <div class="flex items-center justify-between">
+                <span>Home Lab & Domotique</span>
+                <router-link 
+                  :to="isDev ? '/projects/home-lab' : '/portfolio/projects/home-lab'" 
+                  class="text-primary-300 hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300 text-sm font-medium"
+                >
+                  Lire →
+                </router-link>
+              </div>
+            </template>
             <ul class="space-y-2 list-none pl-5">
-              <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Architecture <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Infrastructure as Code</span> avec Ansible</li>
-              <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Cluster <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Kubernetes</span> sur Raspberry Pi</li>
-              <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Monitoring avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Prometheus</span> et <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Grafana</span></li>
-              <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">CI/CD avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">GitLab</span> pour le déploiement continu</li>
+              <li class="list-item-tech">Monitoring énergétique avec <span class="highlight-text">PZEM</span> et <span class="highlight-text">ESPHome</span></li>
+              <li class="list-item-tech">Développement <span class="highlight-text">HACS-Tiko</span> pour contrôle des radiateurs</li>
+              <li class="list-item-tech">Vidéosurveillance IA avec <span class="highlight-text">Frigate</span> et détection d'objets</li>
+              <li class="list-item-tech">VM <span class="highlight-text">Home Assistant</span> sur Freebox Ultra</li>
+              <li class="list-item-tech">Automatisation complète avec <span class="highlight-text">MQTT</span></li>
             </ul>
           </SkillCard>
 
           <SkillCard>
             <template #title>Caméra Thermique DIY</template>
             <ul class="space-y-2 list-none pl-5">
-              <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Design PCB avec capteur <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">MLX90640</span></li>
-              <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Programmation <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">ESP32</span> et écran ILI9341</li>
-              <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Modélisation et impression 3D du boîtier</li>
-              <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Interpolation et traitement d'image</li>
+              <li class="list-item-tech">Design PCB avec capteur <span class="highlight-text">MLX90640</span></li>
+              <li class="list-item-tech">Programmation <span class="highlight-text">ESP32</span> et écran ILI9341</li>
+              <li class="list-item-tech">Modélisation et impression 3D du boîtier</li>
+              <li class="list-item-tech">Interpolation et traitement d'image</li>
             </ul>
           </SkillCard>
 
           <SkillCard>
-            <template #title>Projets Web</template>
+            <template #title>
+              <div class="flex items-center justify-between">
+                <span>Projets Web Full-Stack</span>
+                <router-link 
+                  :to="isDev ? '/projects/brasserie-chez-ju' : '/portfolio/projects/brasserie-chez-ju'" 
+                  class="text-primary-300 hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300 text-sm font-medium"
+                >
+                  Lire →
+                </router-link>
+              </div>
+            </template>
             <ul class="space-y-2 list-none pl-5">
-              <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Site web restaurant avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">NuxtJS</span> + <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">Firebase</span></li>
-              <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Portfolio personnel en <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">VueJS</span></li>
-              <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Applications web avec <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">TailwindCSS</span></li>
+              <li class="list-item-tech">Site restaurant avec <span class="highlight-text">Nuxt 3</span>, <span class="highlight-text">FastAPI</span> et <span class="highlight-text">Directus CMS</span></li>
+              <li class="list-item-tech">Optimisation SEO (score Lighthouse > 90)</li>
+              <li class="list-item-tech">Portfolio avec <span class="highlight-text">VueJS</span> et <span class="highlight-text">TailwindCSS</span></li>
+              <li class="list-item-tech">Infrastructure <span class="highlight-text">Docker</span> et <span class="highlight-text">Traefik</span></li>
+              <li class="list-item-tech">CI/CD avec <span class="highlight-text">GitHub Actions</span></li>
             </ul>
           </SkillCard>
         </div>
@@ -159,28 +313,52 @@
 
       <!-- Formation -->
       <section class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent text-center">Formation</h2>
+        <h2 class="section-title">Formation</h2>
         <div class="relative py-8 grid gap-8">
           <div class="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary-300/30 to-primary-300/10"></div>
           <TimelineItem date="2020 - 2023">
             <template #title>
-              <span class="text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300">ENSEEIHT</span> - Diplôme d'ingénieur
+              <span class="highlight-text">ENSEEIHT</span> - Diplôme d'ingénieur
             </template>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
+                <div class="mb-4 text-slate-400">
+                  Formation d'excellence en électronique et télécommunications à Toulouse INP. Spécialisation en systèmes embarqués et communications numériques.
+                </div>
                 <div class="mb-2 text-slate-200 font-medium">Spécialisation</div>
                 <ul class="space-y-2 list-none pl-5">
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Systèmes communicants</li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Développement logiciel</li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Systèmes hautes fréquences embarqués</li>
+                  <li class="list-item-tech">Communications numériques et <span class="highlight-text">RF</span></li>
+                  <li class="list-item-tech">Systèmes embarqués et <span class="highlight-text">FPGA</span></li>
+                  <li class="list-item-tech">Traitement du signal et <span class="highlight-text">IA</span></li>
+                  <li class="list-item-tech">Architecture des systèmes communicants</li>
                 </ul>
               </div>
               <div>
-                <div class="mb-2 text-slate-200 font-medium">Points Clés</div>
+                <div class="mb-2 text-slate-200 font-medium">Projets Académiques</div>
                 <ul class="space-y-2 list-none pl-5">
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Projet Nanosatellite</li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Club de robotique</li>
-                  <li class="relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300">Projet radar</li>
+                  <li class="list-item-tech">Projet <span class="highlight-text">Nanosatellite</span> - Communications spatiales</li>
+                  <li class="list-item-tech">Conception <span class="highlight-text">RADAR</span> - Traitement du signal</li>
+                  <li class="list-item-tech">Club robotique - Systèmes embarqués temps réel</li>
+                </ul>
+              </div>
+            </div>
+          </TimelineItem>
+          <TimelineItem date="2018 - 2020">
+            <template #title>
+              <span class="highlight-text">Classe Préparatoire PSI</span> - <span class="highlight-text">Lycée Arago</span>
+            </template>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <div class="mb-4 text-slate-400">
+                  Préparation intensive pour les concours d'entrée dans les grandes écoles d'ingénieurs. Spécialisation en physique, sciences de l'ingénieur et mathématiques. Major de la promotion.
+                </div>
+                <div class="mb-2 text-slate-200 font-medium">Matières</div>
+                <ul class="space-y-2 list-none pl-5">
+                  <li class="list-item-tech">Mathématiques</li>
+                  <li class="list-item-tech">Physique</li>
+                  <li class="list-item-tech">Sciences de l'ingénieur</li>
+                  <li class="list-item-tech">Français</li>
+                  <li class="list-item-tech">Anglais</li>
                 </ul>
               </div>
             </div>
@@ -190,7 +368,7 @@
 
       <!-- Langues -->
       <section>
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent text-center">Langues</h2>
+        <h2 class="section-title">Langues</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <SkillCard>
             <template #title>Anglais</template>
@@ -221,7 +399,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, computed } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ProfileCard from '../components/ProfileCard.vue';
@@ -230,6 +408,10 @@ import SkillCard from '../components/SkillCard.vue';
 import ProgressBar from '../components/ProgressBar.vue';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const isDev = computed(() => {
+  return process.env.NODE_ENV === 'development';
+});
 
 onMounted(() => {
   // Animation des sections au scroll
@@ -247,4 +429,18 @@ onMounted(() => {
     });
   });
 });
-</script> 
+</script>
+
+<style>
+.highlight-text {
+  @apply text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300;
+}
+
+.list-item-tech {
+  @apply relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent text-center;
+}
+</style> 

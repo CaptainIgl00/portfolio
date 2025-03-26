@@ -210,7 +210,7 @@ const animateStats = () => {
       toggleActions: 'play none none reverse'
     },
     innerHTML: (i) => {
-      const values = [9, 3, 1];
+      const values = [7, 3, 1];
       return values[i];
     },
     duration: 2,
