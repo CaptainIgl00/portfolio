@@ -4,16 +4,18 @@ import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <div class="app">
-    <NavBar />
-    <main class="main-content">
-      <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
-    </main>
-    <Footer />
+  <div id="app" class="min-h-screen w-screen overflow-x-hidden">
+    <div class="app relative w-full overflow-x-hidden">
+      <NavBar />
+      <main class="main-content">
+        <router-view v-slot="{ Component }">
+          <transition name="fade" mode="out-in">
+            <component :is="Component" />
+          </transition>
+        </router-view>
+      </main>
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -149,5 +151,27 @@ button:disabled {
 ::selection {
   background: rgba(165, 180, 252, 0.2);
   color: #fff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 </style>

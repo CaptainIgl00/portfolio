@@ -1,13 +1,13 @@
 <template>
-  <div class="min-h-screen py-16 text-white bg-gradient-to-br from-slate-900 to-slate-800">
-    <div class="w-full max-w-7xl mx-auto px-4">
+  <div class="min-h-screen overflow-x-hidden py-2 sm:py-8 lg:py-16 text-white bg-gradient-to-br from-slate-900 to-slate-800">
+    <div class="w-full max-w-7xl mx-auto px-1 sm:px-4 lg:px-8">
       <!-- En-tête -->
-      <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent mb-4">MATHEO GUILLOUX</h1>
-        <h2 class="text-2xl md:text-3xl text-primary-300 font-medium mb-4">INGÉNIEUR DEVOPS</h2>
-        <div class="flex items-center justify-center gap-2 text-slate-400">
+      <div class="text-center mb-4 sm:mb-12 lg:mb-16">
+        <h1 class="text-xl sm:text-3xl lg:text-6xl font-bold bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent mb-1 sm:mb-4 tracking-tight leading-tight">MATHEO GUILLOUX</h1>
+        <h2 class="text-base sm:text-2xl lg:text-3xl text-primary-300 font-medium mb-1 sm:mb-4">INGÉNIEUR DEVOPS</h2>
+        <div class="flex items-center justify-center gap-1 sm:gap-2 text-slate-400 text-xs sm:text-base">
           <span class="flex items-center gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 sm:h-5 w-3 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
             </svg>
             Toulouse, France
@@ -16,16 +16,18 @@
       </div>
 
       <!-- Présentation -->
-      <div class="mb-16">
+      <div class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0">
         <ProfileCard title="Ingénieur DevOps & Systèmes Communicants">
-          Diplômé de l'<span class="highlight-text">ENSEEIHT</span> en <span class="highlight-text">télécommunications</span>, je suis un ingénieur spécialisé <span class="highlight-text">DevOps</span> passionné par l'automatisation et l'optimisation des processus de développement. <span class="highlight-text">Flexible</span>, <span class="highlight-text">curieux</span> et <span class="highlight-text">autonome</span>, je m'adapte rapidement aux nouveaux environnements techniques. Mon expertise couvre l'ensemble de la chaîne DevOps, du développement au déploiement, en passant par la conteneurisation et l'orchestration.
+          <p class="text-xs sm:text-lg text-slate-400">
+            Diplômé de l'<span class="highlight-text">ENSEEIHT</span> en <span class="highlight-text">télécommunications</span>, je suis un ingénieur spécialisé <span class="highlight-text">DevOps</span> passionné par l'automatisation et l'optimisation des processus de développement. <span class="highlight-text">Flexible</span>, <span class="highlight-text">curieux</span> et <span class="highlight-text">autonome</span>, je m'adapte rapidement aux nouveaux environnements techniques. Mon expertise couvre l'ensemble de la chaîne DevOps, du développement au déploiement, en passant par la conteneurisation et l'orchestration.
+          </p>
         </ProfileCard>
       </div>
 
       <!-- Compétences -->
-      <section class="mb-16">
+      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0">
         <h2 class="section-title">Compétences Techniques</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
           <SkillCard>
             <template #title>DevOps & Cloud</template>
             <ProgressBar name="Docker" level="Expert" :value="5" />
@@ -56,9 +58,9 @@
       </section>
 
       <!-- Expérience -->
-      <section class="mb-16">
+      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0">
         <h2 class="section-title">Expérience Professionnelle</h2>
-        <div class="relative py-8 grid gap-8">
+        <div class="relative py-2 sm:py-8 grid gap-3 sm:gap-8">
           <div class="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary-300/30 to-primary-300/10"></div>
           
           <TimelineItem 
@@ -69,7 +71,7 @@
             <template #title>
               Projet <span class="highlight-text">POLEOS</span> - <span class="highlight-text">Airbus Defense & Space</span>
             </template>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
               <div>
                 <div class="mb-4 text-slate-200">
                   <p class="mb-2 text-slate-400">Modernisation et automatisation du segment sol des satellites d'observation de la Terre livrés à la Pologne. Implémentation de solutions innovantes basées sur les LLMs et les pratiques DevOps modernes.</p>
@@ -102,7 +104,7 @@
             <template #title>
               Projet <span class="highlight-text">FreeHopper</span> - <span class="highlight-text">Airbus Defense & Space</span>
             </template>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
               <div>
                 <div class="mb-4 text-slate-200">
                   <p class="mb-2 text-slate-400">Projet R&D démontrant la faisabilité du Beam Hopping pour les communications satellites. Développement d'une architecture microservices moderne pour l'automatisation des tests RF.</p>
@@ -135,7 +137,7 @@
             <template #title>
               Projet <span class="highlight-text">Astrocast</span> - <span class="highlight-text">Airbus Defense & Space</span>
             </template>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
               <div>
                 <div class="mb-4 text-slate-200">
                   <p class="mb-2 text-slate-400">Modernisation de l'infrastructure logicielle embarquée pour les satellites IoT d'Astrocast. Migration et optimisation d'un système legacy Petalinux vers une architecture moderne et maintenable.</p>
@@ -167,7 +169,7 @@
             <template #title>
               Projet <span class="highlight-text">TELEO</span> - <span class="highlight-text">Airbus Defense & Space</span> & <span class="highlight-text">ONERA</span>
             </template>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
               <div>
                 <div class="mb-4 text-slate-200">
                   <p class="mb-2 text-slate-400">Développement d'une architecture microservices pour les communications optiques laser entre satellites et stations sol. Collaboration étroite entre Airbus DS et l'ONERA pour démontrer la faisabilité des télécommunications optiques haute performance.</p>
@@ -199,7 +201,7 @@
             <template #title>
               Apprenti Ingénieur R&D RF - <span class="highlight-text">Continental Automotive</span>
             </template>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
               <div>
                 <div class="mb-4 text-slate-400">
                   Développement de bancs de tests RF innovants et dépôt d'un brevet sur la technologie Ultra Wide Band (UWB). Conception et implémentation de solutions d'automatisation pour la caractérisation RF.
@@ -229,10 +231,10 @@
       </section>
 
       <!-- Certifications -->
-      <section class="mb-16">
+      <section class="mb-8 sm:mb-12 lg:mb-16 px-2 sm:px-0">
         <h2 class="section-title">Certifications</h2>
         <div class="flex justify-center">
-          <div class="w-full md:w-96">
+          <div class="w-full sm:w-[28rem] md:w-96">
             <SkillCard>
               <template #title>Python <span class="text-primary-300">•</span> LinkedIn Skills Assessment</template>
               <div class="text-center text-slate-400 mb-4">
@@ -254,9 +256,9 @@
       </section>
 
       <!-- Projets Personnels -->
-      <section class="mb-16">
+      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0">
         <h2 class="section-title">Projets Personnels</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
           <SkillCard>
             <template #title>
               <div class="flex items-center justify-between">
@@ -312,15 +314,15 @@
       </section>
 
       <!-- Formation -->
-      <section class="mb-16">
+      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0">
         <h2 class="section-title">Formation</h2>
-        <div class="relative py-8 grid gap-8">
+        <div class="relative py-2 sm:py-8 grid gap-3 sm:gap-8">
           <div class="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary-300/30 to-primary-300/10"></div>
           <TimelineItem date="2020 - 2023">
             <template #title>
               <span class="highlight-text">ENSEEIHT</span> - Diplôme d'ingénieur
             </template>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
               <div>
                 <div class="mb-4 text-slate-400">
                   Formation d'excellence en électronique et télécommunications à Toulouse INP. Spécialisation en systèmes embarqués et communications numériques.
@@ -347,7 +349,7 @@
             <template #title>
               <span class="highlight-text">Classe Préparatoire PSI</span> - <span class="highlight-text">Lycée Arago</span>
             </template>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
               <div>
                 <div class="mb-4 text-slate-400">
                   Préparation intensive pour les concours d'entrée dans les grandes écoles d'ingénieurs. Spécialisation en physique, sciences de l'ingénieur et mathématiques. Major de la promotion.
@@ -367,9 +369,9 @@
       </section>
 
       <!-- Langues -->
-      <section>
+      <section class="px-1 sm:px-0">
         <h2 class="section-title">Langues</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
           <SkillCard>
             <template #title>Anglais</template>
             <div class="text-center text-slate-400">
@@ -437,10 +439,10 @@ onMounted(() => {
 }
 
 .list-item-tech {
-  @apply relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300;
+  @apply relative text-slate-400 before:content-['•'] before:absolute before:left-[-1.25rem] before:text-primary-300 text-xs sm:text-base;
 }
 
 .section-title {
-  @apply text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent text-center;
+  @apply text-lg sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-8 bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent text-center;
 }
 </style> 
