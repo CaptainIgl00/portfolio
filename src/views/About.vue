@@ -235,22 +235,23 @@
         <h2 class="section-title">Certifications</h2>
         <div class="flex justify-center">
           <div class="w-full sm:w-[28rem] md:w-96">
-            <SkillCard>
-              <template #title>Python <span class="text-primary-300">•</span> LinkedIn Skills Assessment</template>
-              <div class="text-center text-slate-400 mb-4">
-                <p class="mb-2">Top 5% Mondial</p>
-                <p class="text-sm">2023</p>
-              </div>
-              <div class="text-slate-400 mb-4 text-center">
-                Certification technique validant une expertise approfondie en Python via un test exigeant couvrant l'ensemble des aspects du langage.
-              </div>
-              <ul class="space-y-2 list-none pl-5">
-                <li class="list-item-tech">Concepts avancés du langage</li>
-                <li class="list-item-tech">Programmation orientée objet</li>
-                <li class="list-item-tech">Gestion de la mémoire et performances</li>
-                <li class="list-item-tech">Bibliothèques standards et écosystème</li>
-              </ul>
-            </SkillCard>
+            <div v-for="cert in certifications" :key="cert.title" class="mb-4">
+              <SkillCard>
+                <template #title>{{ cert.title }} <span class="text-primary-300">•</span> {{ cert.provider }}</template>
+                <div class="text-center text-slate-400 mb-4">
+                  <p class="mb-2">{{ cert.rank }}</p>
+                  <p class="text-sm">{{ cert.year }}</p>
+                </div>
+                <div class="text-slate-400 mb-4 text-center">
+                  {{ cert.description }}
+                </div>
+                <ul class="space-y-2 list-none pl-5">
+                  <li v-for="achievement in cert.achievements" :key="achievement" class="list-item-tech">
+                    {{ achievement }}
+                  </li>
+                </ul>
+              </SkillCard>
+            </div>
           </div>
         </div>
       </section>
@@ -408,6 +409,7 @@ import ProfileCard from '../components/ProfileCard.vue';
 import TimelineItem from '../components/TimelineItem.vue';
 import SkillCard from '../components/SkillCard.vue';
 import ProgressBar from '../components/ProgressBar.vue';
+import { certifications } from '../data/certifications';
 
 gsap.registerPlugin(ScrollTrigger);
 

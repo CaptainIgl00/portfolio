@@ -132,6 +132,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Background3D from '../components/Background3D.vue';
 import SkillCard from '../components/SkillCard.vue';
+import { projects } from '../data/projects';
+import { getCertificationsCount } from '../data/certifications';
 
 console.log('Chargement de Home.vue');
 
@@ -203,6 +205,11 @@ const typeWriter = () => {
 
 // Animation des statistiques avec GSAP
 const animateStats = () => {
+  // Calcul des années d'expérience depuis juin 2022
+  const startDate = new Date(2022, 5); // Juin 2022 (mois indexés à partir de 0)
+  const currentDate = new Date();
+  const yearsExperience = Math.ceil((currentDate - startDate) / (1000 * 60 * 60 * 24 * 365));
+
   gsap.to('.stat-number', {
     scrollTrigger: {
       trigger: '.stats',
@@ -210,7 +217,7 @@ const animateStats = () => {
       toggleActions: 'play none none reverse'
     },
     innerHTML: (i) => {
-      const values = [7, 3, 1];
+      const values = [projects.length, yearsExperience, getCertificationsCount()];
       return values[i];
     },
     duration: 2,
