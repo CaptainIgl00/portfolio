@@ -1,10 +1,10 @@
 <template>
-  <div class="p-2 transition-all duration-300 hover:bg-primary-300/5 hover:translate-x-1 rounded">
-    <div class="flex justify-between items-center mb-2">
-      <span class="text-slate-200 font-medium text-sm">{{ name }}</span>
-      <span class="text-slate-400 text-xs italic">{{ level }}</span>
+  <div class="p-1 sm:p-1.5 md:p-2 transition-all duration-300 hover:bg-primary-300/5 hover:translate-x-1 rounded">
+    <div class="flex justify-between items-center mb-1 sm:mb-1.5 md:mb-2">
+      <span class="text-slate-200 font-medium text-xs sm:text-sm">{{ name }}</span>
+      <span class="text-slate-400 text-[10px] sm:text-xs italic">{{ level }}</span>
     </div>
-    <div class="h-1.5 bg-white/10 rounded overflow-hidden relative">
+    <div class="h-1 sm:h-1.5 bg-white/10 rounded overflow-hidden relative">
       <div 
         class="h-full bg-gradient-to-r from-primary-300 to-primary-500 rounded transition-all duration-500 relative z-10"
         :class="{
