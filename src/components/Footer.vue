@@ -5,7 +5,7 @@
         <div class="footer-brand">
           <router-link to="/" class="footer-logo">MG</router-link>
           <span class="footer-divider">|</span>
-          <p class="footer-tagline">Développeur Passionné</p>
+          <p class="footer-tagline">Ingénieur DevOps</p>
         </div>
         
         <div class="footer-links">
