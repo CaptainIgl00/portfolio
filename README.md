@@ -69,8 +69,26 @@ Ce portfolio présente mes compétences en développement web, mes projets et me
    ```bash
    npm run deploy
    # ou avec yarn
-   yarn deploy
-   ```
+  yarn deploy
+  ```
+
+### Configuration Nginx pour un VPS
+
+Le conteneur utilise Nginx pour servir l'application. Pour que le rechargement d'une page ou l'accès direct à une URL fonctionne (par exemple `/portfolio/projects/uwb`), le fichier `nginx.conf` redirige toutes les routes non trouvées vers `index.html` :
+
+```nginx
+server {
+    listen 80;
+    server_name _;
+    root /usr/share/nginx/html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+```
+
+Cette configuration est copiée dans l'image Docker via le `Dockerfile`.
 
 ## Structure du projet
 
