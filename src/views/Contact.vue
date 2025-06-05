@@ -26,7 +26,7 @@
               </h2>
               
               <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
-                Passionné par les technologies web, je suis toujours ouvert à discuter de nouveaux projets innovants. N'hésitez pas à me contacter pour échanger sur vos idées ou pour des opportunités professionnelles.
+                Passionné par la culture DevOps et l'automatisation, je suis toujours ouvert à discuter de nouveaux projets innovants. N'hésitez pas à me contacter pour échanger sur vos idées ou pour des opportunités professionnelles.
               </p>
 
               <!-- Location with animation -->
