@@ -2,7 +2,7 @@
   <nav class="navbar" :class="{ 'navbar-scrolled': isScrolled }">
     <div class="container">
       <router-link to="/" class="navbar-logo">
-        <span class="logo-text">MG</span>
+        <span class="logo-text">MC</span>
         <span class="logo-full">Matheo Champagne</span>
       </router-link>
       

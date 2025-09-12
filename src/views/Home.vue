@@ -142,12 +142,14 @@ gsap.registerPlugin(ScrollTrigger);
 // Texte à afficher dans l'effet machine à écrire
 const typewriterText = ref(null);
 const typewriterStrings = [
-  'des solutions DevOps',
-  'des bancs de test',
+  'des solutions GitOps',
   'des solutions de monitoring',
   'des interfaces web',
   'des solutions backend',
+  'des solutions IA',
+  'des solutions DevOps',
   'des outils automatisés',
+  'des bancs de test',
   'des solutions de gestion de base de données',
 ];
 let typewriterCurrentIndex = 0;
