@@ -3,14 +3,16 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/portfolio/',
+  base: '/',
   plugins: [vue()],
   build: {
     rollupOptions: {
       output: {
-        headers: {
-          'Permissions-Policy': 'interest-cohort=()',
-          'X-Frame-Options': 'DENY'
+        // Optimisations pour le chunking
+        manualChunks: {
+          vendor: ['vue', 'vue-router', 'pinia'],
+          three: ['three'],
+          utils: ['gsap', 'marked', '@vueuse/core']
         }
       }
     }

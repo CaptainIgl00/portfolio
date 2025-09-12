@@ -1,42 +1,56 @@
-name: Deploy to GitHub Pages
+name: deploy-portfolio
 
 on:
   push:
-    branches: ['main']
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches: [main]
+  workflow_dispatch: # Permet de déclencher manuellement
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: 📥 Checkout code
         uses: actions/checkout@v4
-      - name: Setup Node
+
+      - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      - name: Install Dependencies
-        run: npm ci
-      - name: Build
-        run: npm run build
-      - name: Create .nojekyll file
-        run: touch dist/.nojekyll
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
+          node-version: 20
+          cache: 'npm'
 
-  deploy:
-    environment:
-      name: production
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4 
+      - name: 🔨 Install dependencies and build
+        run: |
+          npm ci --frozen-lockfile
+          npm run build
+
+      - name: 🔑 Install SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/key
+          chmod 600 ~/.ssh/key
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: 🚀 Deploy to VPS
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          REL=$(date +%Y%m%d-%H%M%S)
+          echo "🚀 Deploying release: $REL"
+          
+          # Create releases directory if it doesn't exist
+          ssh -i ~/.ssh/key $SSH_USER@$SSH_HOST "mkdir -p /srv/www/portfolio/releases"
+          
+          # Upload new release
+          rsync -az --delete -e "ssh -i ~/.ssh/key" dist/ $SSH_USER@$SSH_HOST:/srv/www/portfolio/releases/$REL/
+          
+          # Activate new release and cleanup old ones (keep 3)
+          ssh -i ~/.ssh/key $SSH_USER@$SSH_HOST "ln -sfn /srv/www/portfolio/releases/$REL /srv/www/portfolio/current && \
+             find /srv/www/portfolio/releases -mindepth 1 -maxdepth 1 -type d | sort | head -n -3 | xargs -r rm -rf"
+          
+          echo "✅ Successfully deployed release: $REL"
+
+      - name: 🔍 Verify deployment
+        run: |
+          sleep 5
+          curl -sI https://champagnedevops.fr | head -n 1 || echo "⚠️ Site not yet accessible, DNS might still be propagating"
