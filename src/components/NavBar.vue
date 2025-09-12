@@ -3,7 +3,7 @@
     <div class="container">
       <router-link to="/" class="navbar-logo">
         <span class="logo-text">MG</span>
-        <span class="logo-full">Matheo Guilloux</span>
+        <span class="logo-full">Matheo Champagne</span>
       </router-link>
       
       <button class="mobile-menu-button" @click="isMenuOpen = !isMenuOpen">

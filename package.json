@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "./deploy.sh",
-    "health-check": "./health-check.sh"
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "@types/three": "^0.174.0",

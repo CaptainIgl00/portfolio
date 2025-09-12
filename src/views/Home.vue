@@ -4,7 +4,7 @@
     <header class="hero">
       <div class="hero-content">
         <div class="container">
-          <h1 class="glitch" data-text="Matheo Guilloux">Matheo Guilloux</h1>
+          <h1 class="glitch" data-text="Matheo Champagne">Matheo Champagne</h1>
           <p class="tagline slide-in-right">Ingénieur DevOps</p>
           <div class="typewriter">
             <h2>Je développe <span class="accent" ref="typewriterText"></span></h2>

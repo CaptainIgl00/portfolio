@@ -1,3 +1,7 @@
+{
+  admin off
+}
+
 champagnedevops.fr, www.champagnedevops.fr {
   encode zstd gzip
   root * /srv/www/portfolio/current
@@ -6,11 +10,11 @@ champagnedevops.fr, www.champagnedevops.fr {
 
   header {
     # Cache long pour assets fingerprintés
-    @assets path *.js *.css *.png *.jpg *.svg *.ico *.webp *.woff *.woff2
+    @assets path_regexp \.(js|css|png|jpg|jpeg|svg|ico|webp|woff|woff2)$
     header @assets Cache-Control "public, max-age=31536000, immutable"
     
     # Pas de cache pour HTML (déploiements instantanés)
-    @html path *.html
+    @html path_regexp \.html$
     header @html Cache-Control "no-cache"
     
     # Sécurité de base

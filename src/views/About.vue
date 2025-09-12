@@ -3,7 +3,7 @@
     <div class="w-full max-w-7xl mx-auto px-1 sm:px-4 lg:px-8">
       <!-- En-tête -->
       <div class="text-center mb-4 sm:mb-12 lg:mb-16">
-        <h1 class="text-xl sm:text-3xl lg:text-6xl font-bold bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent mb-1 sm:mb-4 tracking-tight leading-tight">MATHEO GUILLOUX</h1>
+        <h1 class="text-xl sm:text-3xl lg:text-6xl font-bold bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent mb-1 sm:mb-4 tracking-tight leading-tight">MATHEO CHAMPAGNE</h1>
         <h2 class="text-base sm:text-2xl lg:text-3xl text-primary-300 font-medium mb-1 sm:mb-4">INGÉNIEUR DEVOPS</h2>
         <div class="flex items-center justify-center gap-1 sm:gap-2 text-slate-400 text-xs sm:text-base">
           <span class="flex items-center gap-1">
