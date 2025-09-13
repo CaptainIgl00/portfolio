@@ -66,7 +66,7 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
     minify: true,
     prerender: {
-      routes: ['/']
+      routes: ['/', '/about', '/projects', '/contact']
     }
   },
   
