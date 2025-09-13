@@ -1,11 +1,11 @@
 <template>
   <div class="project-detail">
-    <router-link to="/projects" class="back-link">
+    <NuxtLink to="/projects" class="back-link">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
       </svg>
       Retour aux projets
-    </router-link>
+    </NuxtLink>
 
     <div class="project-grid">
       <div class="project-content">
@@ -19,7 +19,7 @@
         </div>
 
         <div class="project-image" v-if="project.image">
-          <img :src="project.image" :alt="project.title" />
+          <NuxtImg :src="project.image" :alt="project.title" loading="lazy" />
         </div>
 
         <div class="project-links" v-if="project.demoLink || project.codeLink">
@@ -71,13 +71,23 @@ const markdownContent = ref('');
 
 onMounted(async () => {
   try {
-    const baseUrl = import.meta.env.BASE_URL || '/';
-    const response = await fetch(`${baseUrl}projects/markdown/${props.project.markdownFile}`);
-    const markdown = await response.text();
-    markdownContent.value = marked(markdown);
+    if (props.project.markdownFile) {
+      const response = await fetch(`/projects/markdown/${props.project.markdownFile}`);
+      if (response.ok) {
+        const markdown = await response.text();
+        markdownContent.value = marked(markdown);
+      } else {
+        // Fallback vers la description si le fichier markdown n'existe pas
+        markdownContent.value = `<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`;
+      }
+    } else {
+      // Fallback vers la description si pas de fichier markdown
+      markdownContent.value = `<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`;
+    }
   } catch (error) {
     console.error('Erreur lors du chargement du markdown:', error);
-    markdownContent.value = '<p>Erreur lors du chargement du contenu.</p>';
+    // Fallback vers la description en cas d'erreur
+    markdownContent.value = `<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`;
   }
 });
 </script>
@@ -606,5 +616,114 @@ onMounted(async () => {
   :deep(.markdown-body) {
     font-size: 0.9375rem;
   }
+}
+
+/* Styles pour le contenu markdown */
+:deep(.markdown-body) {
+  color: #94a3b8;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+}
+
+:deep(.markdown-body h1),
+:deep(.markdown-body h2),
+:deep(.markdown-body h3),
+:deep(.markdown-body h4),
+:deep(.markdown-body h5),
+:deep(.markdown-body h6) {
+  color: #a5b4fc;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+:deep(.markdown-body h1) {
+  font-size: 2rem;
+}
+
+:deep(.markdown-body h2) {
+  font-size: 1.5rem;
+}
+
+:deep(.markdown-body h3) {
+  font-size: 1.25rem;
+}
+
+:deep(.markdown-body p) {
+  margin-bottom: 1rem;
+}
+
+:deep(.markdown-body ul),
+:deep(.markdown-body ol) {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+:deep(.markdown-body li) {
+  margin-bottom: 0.5rem;
+}
+
+:deep(.markdown-body code) {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+:deep(.markdown-body pre) {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+:deep(.markdown-body pre code) {
+  background-color: transparent;
+  padding: 0;
+}
+
+:deep(.markdown-body blockquote) {
+  border-left: 4px solid #a5b4fc;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #cbd5e1;
+}
+
+:deep(.markdown-body a) {
+  color: #a5b4fc;
+  text-decoration: none;
+}
+
+:deep(.markdown-body a:hover) {
+  text-decoration: underline;
+}
+
+:deep(.markdown-body img) {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+:deep(.markdown-body table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+:deep(.markdown-body th),
+:deep(.markdown-body td) {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+:deep(.markdown-body th) {
+  background-color: rgba(255, 255, 255, 0.05);
+  font-weight: 600;
 }
 </style> 

@@ -25,7 +25,7 @@ Premier banc développé pour les capteurs de pression des pneus :
   - Analyse en conditions réelles
   - Validation des performances
 
-![BLE Test Bench](/portfolio/projects/ble-test-bench.png)
+![BLE Test Bench](/projects/ble-test-bench.png)
 
 ### Banc de Test Chambre Anéchoïque
 Automatisation complète des mesures de diagramme de rayonnement :
@@ -41,7 +41,7 @@ Automatisation complète des mesures de diagramme de rayonnement :
   - Génération de rapports
   - Visualisation des diagrammes
 
-![Diagramme de Rayonnement](/portfolio/projects/radiation-pattern.png)
+![Diagramme de Rayonnement](/projects/radiation-pattern.png)
 
 ### Banc de Test UWB Véhicule
 Évolution majeure du système de caractérisation UWB :
@@ -58,7 +58,7 @@ Automatisation complète des mesures de diagramme de rayonnement :
   - Enregistrement des sessions
   - Algorithme d'interpolation avancé
 
-![UWB Test Bench](/portfolio/projects/uwb-test-bench.png)
+![UWB Test Bench](/projects/uwb-test-bench.png)
 
 ### Innovation Brevetée
 Développement d'une solution brevetée pour l'UWB :

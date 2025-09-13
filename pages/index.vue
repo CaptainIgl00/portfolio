@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <Background3D />
+    <ClientOnly>
+      <Background3D />
+    </ClientOnly>
     <header class="hero">
       <div class="hero-content">
         <div class="container">
@@ -10,12 +12,12 @@
             <h2>Je développe <span class="accent" ref="typewriterText"></span></h2>
           </div>
           <div class="cta-buttons">
-            <router-link to="/projects" class="btn btn-primary">
+            <NuxtLink to="/projects" class="btn btn-primary">
               <span class="btn-content">Voir mes projets</span>
-            </router-link>
-            <router-link to="/contact" class="btn btn-secondary">
+            </NuxtLink>
+            <NuxtLink to="/contact" class="btn btn-secondary">
               <span class="btn-content">Me contacter</span>
-            </router-link>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -100,7 +102,7 @@
         <div class="featured-project-card">
           <div class="featured-project-image">
             <div class="image-overlay"></div>
-            <img src="https://brasseriechezju.com/_ipx/f_webp&q_90/images/menu/pavlova.jpg" alt="Brasserie Chez Ju" class="project-image">
+            <NuxtImg src="/projects/pavlova.jpg" alt="Brasserie Chez Ju" class="project-image" loading="lazy" />
           </div>
           <div class="featured-project-info">
             <h3>Brasserie Chez Ju</h3>
@@ -127,20 +129,28 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Background3D from '../components/Background3D.vue';
-import SkillCard from '../components/SkillCard.vue';
-import { projects } from '../data/projects';
-import { getCertificationsCount } from '../data/certifications';
+import { ref, onMounted, onUnmounted } from 'vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Background3D from '~/components/Background3D.vue'
+import SkillCard from '~/components/SkillCard.vue'
+import { projects } from '~/data/projects'
+import { getCertificationsCount } from '~/data/certifications'
 
-console.log('Chargement de Home.vue');
+// Meta pour le SEO
+useHead({
+  title: 'Matheo Champagne - Ingénieur DevOps',
+  meta: [
+    { name: 'description', content: 'Portfolio de Matheo Champagne, Ingénieur DevOps spécialisé en infrastructure cloud et développement' }
+  ]
+})
 
-gsap.registerPlugin(ScrollTrigger);
+console.log('Chargement de Home.vue')
+
+gsap.registerPlugin(ScrollTrigger)
 
 // Texte à afficher dans l'effet machine à écrire
-const typewriterText = ref(null);
+const typewriterText = ref(null)
 const typewriterStrings = [
   'des solutions GitOps',
   'des solutions de monitoring',
@@ -151,66 +161,66 @@ const typewriterStrings = [
   'des outils automatisés',
   'des bancs de test',
   'des solutions de gestion de base de données',
-];
-let typewriterCurrentIndex = 0;
-let typewriterCharIndex = 0;
-let typewriterTimer = null;
-let typewriterDeleting = false;
-let typewriterPause = false;
+]
+let typewriterCurrentIndex = 0
+let typewriterCharIndex = 0
+let typewriterTimer = null
+let typewriterDeleting = false
+let typewriterPause = false
 
 // Compteurs pour les statistiques
-const projectsCount = ref(null);
-const experienceCount = ref(null);
-const certificationsCount = ref(null);
+const projectsCount = ref(null)
+const experienceCount = ref(null)
+const certificationsCount = ref(null)
 
 // Fonction pour l'effet machine à écrire
 const typeWriter = () => {
-  if (!typewriterText.value) return;
+  if (!typewriterText.value) return
   
-  const currentText = typewriterStrings[typewriterCurrentIndex];
+  const currentText = typewriterStrings[typewriterCurrentIndex]
   
   if (typewriterPause) {
-    typewriterPause = false;
-    typewriterTimer = setTimeout(typeWriter, 1000);
-    return;
+    typewriterPause = false
+    typewriterTimer = setTimeout(typeWriter, 1000)
+    return
   }
   
   if (typewriterDeleting) {
     // Suppression de caractères
-    typewriterText.value.textContent = currentText.substring(0, typewriterCharIndex - 1);
-    typewriterCharIndex--;
+    typewriterText.value.textContent = currentText.substring(0, typewriterCharIndex - 1)
+    typewriterCharIndex--
     
     if (typewriterCharIndex === 0) {
-      typewriterDeleting = false;
-      typewriterCurrentIndex = (typewriterCurrentIndex + 1) % typewriterStrings.length;
+      typewriterDeleting = false
+      typewriterCurrentIndex = (typewriterCurrentIndex + 1) % typewriterStrings.length
     }
     
-    typewriterTimer = setTimeout(typeWriter, 50);
+    typewriterTimer = setTimeout(typeWriter, 50)
   } else {
     // Ajout de caractères
-    typewriterText.value.textContent = currentText.substring(0, typewriterCharIndex + 1);
-    typewriterCharIndex++;
+    typewriterText.value.textContent = currentText.substring(0, typewriterCharIndex + 1)
+    typewriterCharIndex++
     
     if (typewriterCharIndex === currentText.length) {
-      typewriterDeleting = false;
-      typewriterPause = true;
+      typewriterDeleting = false
+      typewriterPause = true
       setTimeout(() => {
-        typewriterDeleting = true;
-        typeWriter();
-      }, 1500);
-      return;
+        typewriterDeleting = true
+        typeWriter()
+      }, 1500)
+      return
     }
     
-    typewriterTimer = setTimeout(typeWriter, 100);
+    typewriterTimer = setTimeout(typeWriter, 100)
   }
-};
+}
 
 // Animation des statistiques avec GSAP
 const animateStats = () => {
   // Calcul des années d'expérience depuis juin 2022
-  const startDate = new Date(2022, 5); // Juin 2022 (mois indexés à partir de 0)
-  const currentDate = new Date();
-  const yearsExperience = Math.ceil((currentDate - startDate) / (1000 * 60 * 60 * 24 * 365));
+  const startDate = new Date(2022, 5) // Juin 2022 (mois indexés à partir de 0)
+  const currentDate = new Date()
+  const yearsExperience = Math.ceil((currentDate - startDate) / (1000 * 60 * 60 * 24 * 365))
 
   gsap.to('.stat-number', {
     scrollTrigger: {
@@ -219,18 +229,18 @@ const animateStats = () => {
       toggleActions: 'play none none reverse'
     },
     innerHTML: (i) => {
-      const values = [projects.length, yearsExperience, getCertificationsCount()];
-      return values[i];
+      const values = [projects.length, yearsExperience, getCertificationsCount()]
+      return values[i]
     },
     duration: 2,
     ease: 'power2.out',
     snap: { innerHTML: 1 }
-  });
-};
+  })
+}
 
 onMounted(() => {
-  typeWriter();
-  animateStats();
+  typeWriter()
+  animateStats()
   
   // Animation des titres avec effet glitch
   gsap.from('.glitch', {
@@ -243,15 +253,15 @@ onMounted(() => {
     y: 30,
     duration: 0.8,
     ease: 'power3.out'
-  });
-});
+  })
+})
 
 onUnmounted(() => {
   // Nettoyer le timer pour éviter les fuites de mémoire
   if (typewriterTimer) {
-    clearTimeout(typewriterTimer);
+    clearTimeout(typewriterTimer)
   }
-});
+})
 </script>
 
 <style scoped>
@@ -572,4 +582,4 @@ onUnmounted(() => {
     flex-direction: column;
   }
 }
-</style> 
+</style>

@@ -1,7 +1,7 @@
 ## Contexte
 **FreeHopper** est un projet R&D innovant d'Airbus Defense & Space visant à démontrer la faisabilité du **Beam Hopping** pour les communications satellites. Cette technologie révolutionnaire permet à un satellite de couvrir dynamiquement plusieurs zones géographiques en "sautant" d'une zone à l'autre, offrant une flexibilité inédite dans l'allocation des ressources de communication.
 
-![Beam Hopping](/portfolio/projects/beam-hopping.png)
+![Beam Hopping](/projects/beam-hopping.png)
 
 ## Challenge Initial
 Le projet faisait face à des défis majeurs :
@@ -16,7 +16,7 @@ Le projet faisait face à des défis majeurs :
 ### Architecture DevOps
 Grâce à l'**IDE Cursor** et son IA intégrée, j'ai pu concevoir et implémenter une architecture microservices robuste en un temps record :
 
-![Architecture](/portfolio/projects/freehopper-architecture.png)
+![Architecture](/projects/freehopper-architecture.png)
 
 - **Frontend** :
   - Interface utilisateur moderne avec **Vite.js**, **VueJS** et **TailwindCSS**

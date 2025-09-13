@@ -1,7 +1,7 @@
 ## Contexte
 **TELEO** est un projet innovant d'**Airbus Defense & Space** en partenariat avec l'**ONERA**, visant à démontrer la faisabilité des communications optiques laser entre satellites et stations sol. Cette technologie révolutionnaire permet d'atteindre des débits de transmission exceptionnels, essentiels pour la transmission d'images satellites en ultra haute résolution.
 
-![Communications Optiques](/portfolio/projects/optical-comms.png)
+![Communications Optiques](/projects/optical-comms.png)
 
 ## Challenge Initial
 Le projet présentait plusieurs défis techniques majeurs :

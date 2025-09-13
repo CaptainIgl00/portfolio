@@ -1,7 +1,7 @@
 ## Contexte
 **Astrocast** est une startup Suisse spécialisée dans l'**IoT satellitaire**, offrant une solution de connectivité globale pour la gestion d'appareils à distance. Leur technologie permet de connecter et gérer des dispositifs IoT (comme des drones agricoles) instantanément n'importe où sur la planète grâce à leur constellation de satellites.
 
-![IoT Satellitaire](/portfolio/projects/satellite-iot.png)
+![IoT Satellitaire](/projects/satellite-iot.png)
 
 ## Challenge Initial
 Le projet présentait plusieurs défis techniques majeurs :

@@ -38,7 +38,7 @@
                 <span class="text-slate-400 text-sm sm:text-base">Actuellement à Toulouse, France</span>
               </div>
             </div>
-
+            
             <div class="space-y-4 sm:space-y-6">
               <!-- Email -->
               <div class="group flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 bg-slate-800/50 rounded-lg sm:rounded-xl border border-slate-700/50 transition duration-300 hover:border-indigo-500/30 hover:transform hover:-translate-y-1">
@@ -49,12 +49,12 @@
                 </div>
                 <div class="flex-grow min-w-0">
                   <h3 class="text-white font-medium mb-1 group-hover:text-indigo-300 transition-colors">Email</h3>
-                  <a href="mailto:contact@champagnedevops.fr" class="text-indigo-400 hover:text-indigo-300 transition-colors text-base sm:text-lg break-all">
+                  <a href="mailto:contact@champagnedevops.fr" class="text-indigo-400 hover:text-indigo-300 transition-colors text-base sm:text-lg whitespace-nowrap">
                     contact@champagnedevops.fr
                   </a>
                 </div>
               </div>
-
+              
               <!-- Social Links -->
               <div class="group flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 bg-slate-800/50 rounded-lg sm:rounded-xl border border-slate-700/50 transition duration-300 hover:border-indigo-500/30 hover:transform hover:-translate-y-1">
                 <div class="flex-shrink-0 w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center bg-indigo-500/10 rounded-lg text-indigo-400 group-hover:scale-110 transition duration-300">
@@ -96,5 +96,11 @@
 </template>
 
 <script setup>
-// No JavaScript needed for this component
-</script> 
+// Meta pour le SEO
+useHead({
+  title: 'Contact - Matheo Champagne',
+  meta: [
+    { name: 'description', content: 'Contactez Matheo Champagne pour discuter de vos projets DevOps et de développement' }
+  ]
+})
+</script>

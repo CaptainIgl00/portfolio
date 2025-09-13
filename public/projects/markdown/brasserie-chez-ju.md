@@ -56,17 +56,17 @@ La **Brasserie Chez Ju** est un restaurant traditionnel français situé à **Ca
 - **Score Lighthouse > 90** sur tous les critères
 - **Temps de chargement < 2 secondes**
 
-![image](/portfolio/projects/seo.png)
+![image](/projects/seo.png)
 
 - Interface d'administration **intuitive** pour le client
 - **Maintenance simplifiée** grâce au CMS
 
-![image](/portfolio/projects/cms.png)
+![image](/projects/cms.png)
 
 - Système de réservation **automatisé** réduisant la charge de travail
 - Augmentation **significative** de la visibilité en ligne
 
-![image](/portfolio/projects/google-ads.png)
+![image](/projects/google-ads.png)
 
 Pour un restaurant sur la région de Carcassonne, un **CTR de 3,05%** est un résultat très satisfaisant.
 

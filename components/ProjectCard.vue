@@ -7,7 +7,7 @@
     <div class="project-image" :class="{ 'image-hovered': isHovered }">
       <div class="image-overlay"></div>
       <div v-if="project.image" class="real-image">
-        <img :src="project.image" :alt="project.title" />
+        <NuxtImg :src="project.image" :alt="project.title" loading="lazy" />
       </div>
       <div v-else class="placeholder-image">
         <span>{{ project.title.charAt(0) }}</span>

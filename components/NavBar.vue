@@ -6,7 +6,7 @@
         <span class="logo-full">Matheo Champagne</span>
       </router-link>
       
-      <button class="mobile-menu-button" @click="isMenuOpen = !isMenuOpen">
+      <button class="mobile-menu-button" @click="isMenuOpen = !isMenuOpen" :aria-label="isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'" :aria-expanded="isMenuOpen">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
