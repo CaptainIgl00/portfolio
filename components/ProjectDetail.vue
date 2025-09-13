@@ -19,7 +19,7 @@
         </div>
 
         <div class="project-image" v-if="project.image">
-          <img :src="project.image" :alt="project.title" />
+          <NuxtImg :src="project.image" :alt="project.title" loading="lazy" />
         </div>
 
         <div class="project-links" v-if="project.demoLink || project.codeLink">

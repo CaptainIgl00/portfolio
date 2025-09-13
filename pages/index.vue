@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <Background3D />
+    <ClientOnly>
+      <Background3D />
+    </ClientOnly>
     <header class="hero">
       <div class="hero-content">
         <div class="container">
@@ -100,7 +102,7 @@
         <div class="featured-project-card">
           <div class="featured-project-image">
             <div class="image-overlay"></div>
-            <img src="/public/projects/pavlova.jpg" alt="Brasserie Chez Ju" class="project-image">
+            <NuxtImg src="/projects/pavlova.jpg" alt="Brasserie Chez Ju" class="project-image" loading="lazy" />
           </div>
           <div class="featured-project-info">
             <h3>Brasserie Chez Ju</h3>
