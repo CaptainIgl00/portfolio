@@ -64,7 +64,10 @@ export default defineNuxtConfig({
   // Configuration Nitro pour compression et performance
   nitro: {
     compressPublicAssets: true,
-    minify: true
+    minify: true,
+    prerender: {
+      routes: ['/']
+    }
   },
   
   // Configuration Vite
