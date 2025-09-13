@@ -42,7 +42,7 @@ jobs:
           ssh -i ~/.ssh/key $SSH_USER@$SSH_HOST "mkdir -p /srv/www/portfolio/releases"
           
           # Upload new release
-          rsync -az --delete -e "ssh -i ~/.ssh/key" dist/ $SSH_USER@$SSH_HOST:/srv/www/portfolio/releases/$REL/
+          rsync -az --delete -e "ssh -i ~/.ssh/key" .output/public/ $SSH_USER@$SSH_HOST:/srv/www/portfolio/releases/$REL/
           
           # Activate new release and cleanup old ones (keep 3)
           ssh -i ~/.ssh/key $SSH_USER@$SSH_HOST "ln -sfn /srv/www/portfolio/releases/$REL /srv/www/portfolio/current && \
