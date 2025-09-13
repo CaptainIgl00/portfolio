@@ -5,7 +5,7 @@ export const projects = [
     tags: ["Web", "DevOps", "Backend", "Frontend"],
     demoLink: "https://brasseriechezju.com",
     codeLink: "https://github.com/CaptainIgl00/BrasserieChezJu",
-    image: "https://brasseriechezju.com/_ipx/f_webp&q_90/images/menu/planche_charcuterie.jpg",
+    image: "/public/projects/planche_charcuterie.jpg",
     markdownFile: "brasserie-chez-ju.md",
     slug: "brasserie-chez-ju",
     highlights: [
@@ -121,7 +121,7 @@ export const projects = [
     tags: ["RF", "Hardware", "IoT", "Frontend", "Backend"],
     demoLink: null,
     codeLink: null,
-    image: "/portfolio/projects/diag.png",
+    image: "/public/projects/diag.png",
     markdownFile: "uwb.md",
     slug: "uwb"
   },
@@ -141,7 +141,7 @@ export const projects = [
     tags: ["IA", "DevOps", "Backend", "Automation", "Web Scraping"],
     demoLink: "https://github.com/CaptainIgl00/browser_bot",
     codeLink: "https://github.com/CaptainIgl00/browser_bot",
-    image: "/portfolio/projects/browser-bot.png",
+    image: "/public/projects/browser-bot.png",
     markdownFile: "browser-bot.md",
     slug: "browser-bot",
     highlights: [
