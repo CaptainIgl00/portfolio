@@ -2,10 +2,10 @@ export const projects = [
   {
     title: "Brasserie Chez Ju",
     description: "Développement et déploiement d'un site web pour un restaurant traditionnel français. Stack technique : Nuxt 3, FastAPI, Directus CMS, PostgreSQL, Docker, Traefik.",
-    tags: ["Web", "DevOps", "Backend", "Frontend"],
+    tags: ["Web", "DevOps"],
     demoLink: "https://brasseriechezju.com",
     codeLink: "https://github.com/CaptainIgl00/BrasserieChezJu",
-    image: "/public/projects/planche_charcuterie.jpg",
+    image: "/projects/planche_charcuterie.jpg",
     markdownFile: "brasserie-chez-ju.md",
     slug: "brasserie-chez-ju",
     highlights: [
@@ -34,7 +34,7 @@ export const projects = [
   {
     title: "POLEOS - Airbus Defense & Space",
     description: "Mission DevSecOps sur un segment sol. Déploiement d'infrastructures via Ansible, développement d'outils internes en Python.",
-    tags: ["DevOps", "Python", "Ansible", "LLM"],
+    tags: ["DevOps", "IA"],
     demoLink: "https://www.airbus.com/en/newsroom/press-releases/2023-01-airbus-to-provide-poland-with-a-very-high-resolution-optical",
     codeLink: null,
     image: "https://www.airbus.com/sites/g/files/jlcbta136/files/styles/airbus_1440x1440/public/2023-01/pleiades_neo_artistview.webp?itok=Kz_RZj7j",
@@ -66,7 +66,7 @@ export const projects = [
   {
     title: "FreeHopper - Airbus Defense & Space",
     description: "Développement d'un ensemble de services Docker pour la gestion d'appareils de mesures et d'automatisation de tests.",
-    tags: ["DevOps", "Web", "IoT", "Backend", "RF"],
+    tags: ["DevOps", "Web", "IoT"],
     demoLink: "https://connectivity.esa.int/projects/hts-free-hopper",
     codeLink: null,
     image: "https://connectivity.esa.int/sites/default/files/inline-images/HTSFreeHopper_logo.png",
@@ -98,7 +98,7 @@ export const projects = [
   {
     title: "Astrocast - Airbus Defense & Space",
     description: "Développement et intégration d'un OS embarqué pour les satellites Astrocast. Stack technique : Petalinux, C++, Docker, Python.",
-    tags: ["Linux", "IoT", "C++", "DevOps"],
+    tags: ["IoT", "DevOps"],
     demoLink: "https://www.astrocast.com/",
     codeLink: null,
     image: "https://electroniques-biz.b-cdn.net/app/uploads/sites/5/2023/03/astronod.jpg",
@@ -108,7 +108,7 @@ export const projects = [
   {
     title: "Madiran - Airbus Defense & Space",
     description: "Développement et déploiement de solutions en Python, C++ dans le cadre du partenariat entre Airbus DS et l'ONERA sur TELEO. Interfaçage avec IDL et Labview, utilisation de Grafana et InfluxDB pour le monitoring.",
-    tags: ["DevOps", "Python", "Backend", "Monitoring"],
+    tags: ["DevOps", "IoT"],
     demoLink: "https://www.airbus.com/en/newsroom/news/2024-12-airbus-and-partners-demonstrate-very-high-speed-optical-link-between-earth",
     codeLink: null,
     image: "https://www.airbus.com/sites/g/files/jlcbta136/files/styles/airbus_1440x1440/public/2024-12/Airbus-built-Badr-8-satellite-for-Arabsat-with-TELEO-Copyright-Airbus.webp?itok=euwhwkd7",
@@ -118,17 +118,17 @@ export const projects = [
   {
     title: "Bancs de test Ultra Wide Band - Continental",
     description: "Développement de plusieurs bancs de tests de tracé de diagramme de rayonnement.",
-    tags: ["RF", "Hardware", "IoT", "Frontend", "Backend"],
+    tags: ["IoT"],
     demoLink: null,
     codeLink: null,
-    image: "/public/projects/diag.png",
+    image: "/projects/diag.png",
     markdownFile: "uwb.md",
     slug: "uwb"
   },
   {
     title: "Home Lab",
     description: "Déploiement d'un home lab avec Home Assistant, création de composants personnalisés et diverses solutions de monitoring.",
-    tags: ["IoT", "Hardware", "DevOps", "Frontend", "Backend", "IA"],
+    tags: ["IoT", "DevOps", "IA"],
     demoLink: "https://demo.home-assistant.io/#/lovelace/home",
     codeLink: null,
     image: "https://design.home-assistant.io/images/brand/logo.png",
@@ -138,10 +138,10 @@ export const projects = [
   {
     title: "Browser Bot",
     description: "Développement d'un agent intelligent capable de naviguer sur le web et d'extraire des informations de manière autonome. Stack technique : Python, FastAPI, Docker, noVNC, Langchain, Chrome DevTools Protocol.",
-    tags: ["IA", "DevOps", "Backend", "Automation", "Web Scraping"],
+    tags: ["IA", "DevOps", "Automatisation"],
     demoLink: "https://github.com/CaptainIgl00/browser_bot",
     codeLink: "https://github.com/CaptainIgl00/browser_bot",
-    image: "/public/projects/browser-bot.png",
+    image: "/projects/browser-bot.png",
     markdownFile: "browser-bot.md",
     slug: "browser-bot",
     highlights: [

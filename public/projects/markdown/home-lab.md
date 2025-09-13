@@ -1,7 +1,7 @@
 ## Contexte
 Mon **Home Lab** est un environnement domotique avancé basé sur **Home Assistant**, hébergé sur une Freebox Ultra customisée. Ce laboratoire personnel combine IoT, monitoring énergétique et intelligence artificielle pour créer un habitat connecté et économe en énergie.
 
-![Home Lab Dashboard](/portfolio/projects/home-lab-dashboard.png)
+![Home Lab Dashboard](/projects/home-lab-dashboard.png)
 
 ## Challenge Initial
 Le projet visait à résoudre plusieurs problématiques :

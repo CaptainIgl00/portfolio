@@ -17,7 +17,7 @@
 - Gestion des données avec **SQLite** et système de fichiers
 - Configuration complète de l'environnement Chrome headless
 
-![Architecture](/portfolio/projects/browser-schem.png)
+![Architecture](/projects/browser-schem.png)
 
 ### Intelligence Artificielle
 - Intégration de **LangChain** pour la gestion de l'agent
@@ -97,7 +97,7 @@ Solutions implémentées :
 - Nettoyage automatique des ressources
 - Monitoring des performances
 
-![Fonctionnement](/portfolio/projects/bot-process.png)
+![Fonctionnement](/projects/bot-process.png)
 
 ## Résultats
 

@@ -1,23 +1,19 @@
-<script setup>
-import NavBar from './components/NavBar.vue'
-import Footer from './components/Footer.vue'
-</script>
-
 <template>
-  <div id="app" class="min-h-screen w-screen overflow-x-hidden">
+  <div class="min-h-screen w-screen overflow-x-hidden">
     <div class="app relative w-full overflow-x-hidden">
       <NavBar />
       <main class="main-content">
-        <router-view v-slot="{ Component }">
-          <transition name="fade" mode="out-in">
-            <component :is="Component" />
-          </transition>
-        </router-view>
+        <slot />
       </main>
       <Footer />
     </div>
   </div>
 </template>
+
+<script setup>
+import NavBar from '~/components/NavBar.vue'
+import Footer from '~/components/Footer.vue'
+</script>
 
 <style>
 /* Style global */
@@ -59,13 +55,13 @@ body {
 }
 
 /* Animation de transition entre les pages */
-.fade-enter-active,
-.fade-leave-active {
+.page-enter-active,
+.page-leave-active {
   transition: opacity 0.3s ease;
 }
 
-.fade-enter-from,
-.fade-leave-to {
+.page-enter-from,
+.page-leave-to {
   opacity: 0;
 }
 
@@ -159,19 +155,5 @@ html, body {
   overflow-x: hidden;
   width: 100vw;
   min-height: 100vh;
-}
-
-#app {
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-.app {
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
 }
 </style>

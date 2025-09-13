@@ -17,7 +17,7 @@
 - Orchestration des déploiements via **Kubernetes**
 - Monitoring avancé avec **Grafana** et métriques personnalisées
 
-![GitLab Runners](/portfolio/projects/gitlab-runners.png)
+![GitLab Runners](/projects/gitlab-runners.png)
 
 ### Innovation et IA
 - Intégration de **modèles LLM** via **Ollama** pour l'assistance au développement
@@ -26,7 +26,7 @@
 - Création d'un assistant virtuel pour le support des équipes
 - Formation des équipes à l'utilisation des **LLMs** pour améliorer la productivité
 
-![Codestral](/portfolio/projects/codestral.png)
+![Codestral](/projects/codestral.png)
 
 ### Développement d'Outils Cloud-Native
 - Développement d'une solution de transfert de fichiers multi-protocoles en **Python**

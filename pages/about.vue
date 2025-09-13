@@ -264,12 +264,12 @@
             <template #title>
               <div class="flex items-center justify-between">
                 <span>Home Lab & Domotique</span>
-                <router-link 
-                  :to="isDev ? '/projects/home-lab' : '/portfolio/projects/home-lab'" 
+                <NuxtLink 
+                  to="/project/home-lab" 
                   class="text-primary-300 hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300 text-sm font-medium"
                 >
                   Lire →
-                </router-link>
+                </NuxtLink>
               </div>
             </template>
             <ul class="space-y-2 list-none pl-5">
@@ -295,12 +295,12 @@
             <template #title>
               <div class="flex items-center justify-between">
                 <span>Projets Web Full-Stack</span>
-                <router-link 
-                  :to="isDev ? '/projects/brasserie-chez-ju' : '/portfolio/projects/brasserie-chez-ju'" 
+                <NuxtLink 
+                  to="/project/brasserie-chez-ju" 
                   class="text-primary-300 hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300 text-sm font-medium"
                 >
                   Lire →
-                </router-link>
+                </NuxtLink>
               </div>
             </template>
             <ul class="space-y-2 list-none pl-5">
@@ -397,25 +397,30 @@
           </SkillCard>
         </div>
       </section>
+
     </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted, computed } from 'vue';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ProfileCard from '../components/ProfileCard.vue';
-import TimelineItem from '../components/TimelineItem.vue';
-import SkillCard from '../components/SkillCard.vue';
-import ProgressBar from '../components/ProgressBar.vue';
-import { certifications } from '../data/certifications';
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import ProfileCard from '~/components/ProfileCard.vue'
+import TimelineItem from '~/components/TimelineItem.vue'
+import SkillCard from '~/components/SkillCard.vue'
+import ProgressBar from '~/components/ProgressBar.vue'
+import { certifications } from '~/data/certifications'
 
-gsap.registerPlugin(ScrollTrigger);
+// Meta pour le SEO
+useHead({
+  title: 'À propos - Matheo Champagne',
+  meta: [
+    { name: 'description', content: 'Découvrez le parcours et les compétences de Matheo Champagne, Ingénieur DevOps spécialisé en infrastructure cloud et développement' }
+  ]
+})
 
-const isDev = computed(() => {
-  return process.env.NODE_ENV === 'development';
-});
+gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   // Animation des sections au scroll
@@ -430,9 +435,9 @@ onMounted(() => {
       x: -50,
       duration: 0.8,
       ease: 'power3.out'
-    });
-  });
-});
+    })
+  })
+})
 </script>
 
 <style>
@@ -447,4 +452,4 @@ onMounted(() => {
 .section-title {
   @apply text-lg sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-8 bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent text-center;
 }
-</style> 
+</style>
