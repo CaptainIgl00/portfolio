@@ -4,7 +4,7 @@
       <!-- En-tête -->
       <div class="text-center mb-4 sm:mb-12 lg:mb-16">
         <h1 class="text-xl sm:text-3xl lg:text-6xl font-bold bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent mb-1 sm:mb-4 tracking-tight leading-tight">MATHEO CHAMPAGNE</h1>
-        <h2 class="text-base sm:text-2xl lg:text-3xl text-primary-300 font-medium mb-1 sm:mb-4">INGÉNIEUR DEVOPS</h2>
+        <h2 class="text-base sm:text-2xl lg:text-3xl text-primary-300 font-medium mb-1 sm:mb-4">{{ $t('hero.subtitle') }}</h2>
         <div class="flex items-center justify-center gap-1 sm:gap-2 text-slate-400 text-xs sm:text-base">
           <span class="flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 sm:h-5 w-3 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -17,19 +17,17 @@
 
       <!-- Présentation -->
       <div class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0">
-        <ProfileCard title="Ingénieur DevOps & Systèmes Communicants">
-          <p class="text-xs sm:text-lg text-slate-400">
-            Diplômé de l'<span class="highlight-text">ENSEEIHT</span> en <span class="highlight-text">télécommunications</span>, je suis un ingénieur spécialisé <span class="highlight-text">DevOps</span> passionné par l'automatisation et l'optimisation des processus de développement. <span class="highlight-text">Flexible</span>, <span class="highlight-text">curieux</span> et <span class="highlight-text">autonome</span>, je m'adapte rapidement aux nouveaux environnements techniques. Mon expertise couvre l'ensemble de la chaîne DevOps, du développement au déploiement, en passant par la conteneurisation et l'orchestration.
-          </p>
+        <ProfileCard :title="$t('about.profileTitle')">
+          <p class="text-xs sm:text-lg text-slate-400">{{ $t('about.profileContent') }}</p>
         </ProfileCard>
       </div>
 
       <!-- Compétences -->
       <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0" data-section="skills">
-        <h2 class="section-title">Compétences Techniques</h2>
+        <h2 class="section-title">{{ $t('about.skillsTitle') }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
           <SkillCard>
-            <template #title>DevOps & Cloud</template>
+            <template #title>{{ $t('about.skills.devops') }}</template>
             <ProgressBar name="Docker" level="Expert" :value="5" />
             <ProgressBar name="Kubernetes" level="Avancé" :value="4" />
             <ProgressBar name="Ansible" level="Avancé" :value="4" />
@@ -38,7 +36,7 @@
           </SkillCard>
           
           <SkillCard>
-            <template #title>Développement</template>
+            <template #title>{{ $t('about.skills.development') }}</template>
             <ProgressBar name="Python" level="Expert" :value="5" />
             <ProgressBar name="C++" level="Avancé" :value="4" />
             <ProgressBar name="JavaScript/TypeScript" level="Avancé" :value="4" />
@@ -47,7 +45,7 @@
           </SkillCard>
           
           <SkillCard>
-            <template #title>Radiofréquences</template>
+            <template #title>{{ $t('about.skills.rf') }}</template>
             <ProgressBar name="Analyseur de spectre" level="Expert" :value="5" />
             <ProgressBar name="Communications numériques" level="Expert" :value="5" />
             <ProgressBar name="Traitement du signal" level="Avancé" :value="4" />
@@ -59,7 +57,7 @@
 
       <!-- Expérience -->
       <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0" data-section="experience">
-        <h2 class="section-title">Expérience Professionnelle</h2>
+        <h2 class="section-title">{{ $t('about.experienceTitle') }}</h2>
         <div class="relative py-2 sm:py-8 grid gap-3 sm:gap-8">
           <div class="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary-300/30 to-primary-300/10"></div>
           
@@ -371,7 +369,7 @@
 
       <!-- Langues -->
       <section class="px-1 sm:px-0" data-section="languages">
-        <h2 class="section-title">Langues</h2>
+        <h2 class="section-title">{{ $t('about.languagesTitle') }}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
           <SkillCard>
             <template #title>Anglais</template>
@@ -403,7 +401,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ProfileCard from '~/components/ProfileCard.vue'
@@ -411,12 +409,13 @@ import TimelineItem from '~/components/TimelineItem.vue'
 import SkillCard from '~/components/SkillCard.vue'
 import ProgressBar from '~/components/ProgressBar.vue'
 import { certifications } from '~/data/certifications'
+const { $t } = useNuxtApp()
 
 // Meta pour le SEO
 useHead({
-  title: 'À propos - Matheo Champagne',
+  title: computed(() => $t('about.metaTitle')),
   meta: [
-    { name: 'description', content: 'Découvrez le parcours et les compétences de Matheo Champagne, Ingénieur DevOps spécialisé en infrastructure cloud et développement' }
+    { name: 'description', content: computed(() => $t('about.metaDescription')) }
   ]
 })
 

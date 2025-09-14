@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Matheo Champagne",
+    "subtitle": "DevOps Engineer",
+    "description": "Specialized in cloud infrastructure and development"
+  },
+  "about": {
+    "title": "About Me",
+    "content": "Passionate about cloud technologies and automation...",
+    "profileTitle": "DevOps Engineer & Communication Systems",
+    "profileContent": "Graduate of ENSEEIHT in telecommunications, I am a DevOps engineer passionate about automation and optimizing development processes.",
+    "skillsTitle": "Technical Skills",
+    "skills": {
+      "devops": "DevOps & Cloud",
+      "development": "Development",
+      "rf": "Radio Frequency"
+    },
+    "experienceTitle": "Professional Experience",
+    "languagesTitle": "Languages",
+    "metaTitle": "About - Matheo Champagne",
+    "metaDescription": "Learn about the background and skills of Matheo Champagne, a DevOps Engineer specialized in cloud infrastructure and development"
+  },
+  "projects": {
+    "title": "My Projects",
+    "description": "Discover my technical achievements...",
+    "metaTitle": "Projects - Matheo Champagne",
+    "metaDescription": "Discover Matheo Champagne's projects in DevOps and development",
+    "filters": {
+      "Tous": "All",
+      "Web": "Web",
+      "DevOps": "DevOps",
+      "IoT": "IoT",
+      "IA": "AI",
+      "Automatisation": "Automation"
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "intro": "Interested in collaborating? Feel free to reach out!",
+    "talkTitle": "Let's talk about your project",
+    "talkContent": "Passionate about DevOps culture and automation, I'm always open to discussing new and exciting ideas.",
+    "location": "Currently in Toulouse, France",
+    "email": "Email",
+    "social": "Social networks",
+    "linkedin": "LinkedIn",
+    "metaTitle": "Contact - Matheo Champagne",
+    "metaDescription": "Contact Matheo Champagne to discuss your DevOps and development projects"
+  },
+  "project": {
+    "back": "Back to projects",
+    "demo": "View demo",
+    "code": "View code",
+    "seeMore": "See more",
+    "keyPoints": "Key points"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}

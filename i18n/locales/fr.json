@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Matheo Champagne",
+    "subtitle": "Ingénieur DevOps",
+    "description": "Spécialisé en infrastructure cloud et développement"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "content": "Passionné par les technologies cloud et l'automatisation...",
+    "profileTitle": "Ingénieur DevOps & Systèmes Communicants",
+    "profileContent": "Diplômé de l'ENSEEIHT en télécommunications, je suis un ingénieur spécialisé DevOps passionné par l'automatisation et l'optimisation des processus de développement.",
+    "skillsTitle": "Compétences Techniques",
+    "skills": {
+      "devops": "DevOps & Cloud",
+      "development": "Développement",
+      "rf": "Radiofréquences"
+    },
+    "experienceTitle": "Expérience Professionnelle",
+    "languagesTitle": "Langues",
+    "metaTitle": "À propos - Matheo Champagne",
+    "metaDescription": "Découvrez le parcours et les compétences de Matheo Champagne, Ingénieur DevOps spécialisé en infrastructure cloud et développement"
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "description": "Découvrez mes réalisations techniques...",
+    "metaTitle": "Projets - Matheo Champagne",
+    "metaDescription": "Découvrez les projets de Matheo Champagne en DevOps et développement",
+    "filters": {
+      "Tous": "Tous",
+      "Web": "Web",
+      "DevOps": "DevOps",
+      "IoT": "IoT",
+      "IA": "IA",
+      "Automatisation": "Automatisation"
+    }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "intro": "Intéressé par une collaboration ? N'hésitez pas à me contacter !",
+    "talkTitle": "Parlons de votre projet",
+    "talkContent": "Passionné par la culture DevOps et l'automatisation, je suis toujours ouvert à discuter de nouveaux projets innovants.",
+    "location": "Actuellement à Toulouse, France",
+    "email": "Email",
+    "social": "Réseaux sociaux",
+    "linkedin": "LinkedIn",
+    "metaTitle": "Contact - Matheo Champagne",
+    "metaDescription": "Contactez Matheo Champagne pour discuter de vos projets DevOps et de développement"
+  },
+  "project": {
+    "back": "Retour aux projets",
+    "demo": "Voir la démo",
+    "code": "Voir le code",
+    "seeMore": "Voir plus",
+    "keyPoints": "Points clés"
+  },
+  "footer": {
+    "rights": "Tous droits réservés"
+  }
+}

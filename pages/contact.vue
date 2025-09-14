@@ -9,10 +9,10 @@
     <div class="max-w-7xl mx-auto relative">
       <div class="text-center mb-8 sm:mb-12 lg:mb-16">
         <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-white to-indigo-300 bg-clip-text text-transparent mb-4 sm:mb-6 tracking-tight">
-          Contact
+          {{ $t('contact.title') }}
         </h1>
         <p class="text-slate-400 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto px-4">
-          Intéressé par une collaboration ? N'hésitez pas à me contacter !
+          {{ $t('contact.intro') }}
         </p>
       </div>
       
@@ -22,11 +22,11 @@
           <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
             <div>
               <h2 class="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-white to-indigo-300 bg-clip-text text-transparent mb-4 sm:mb-6">
-                Parlons de votre projet
+                {{ $t('contact.talkTitle') }}
               </h2>
               
               <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
-                Passionné par la culture DevOps et l'automatisation, je suis toujours ouvert à discuter de nouveaux projets innovants. N'hésitez pas à me contacter pour échanger sur vos idées ou pour des opportunités professionnelles.
+                {{ $t('contact.talkContent') }}
               </p>
 
               <!-- Location with animation -->
@@ -35,7 +35,7 @@
                   <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
                   <div class="w-2 h-2 bg-indigo-500 rounded-full absolute top-0 left-0 animate-ping"></div>
                 </div>
-                <span class="text-slate-400 text-sm sm:text-base">Actuellement à Toulouse, France</span>
+                <span class="text-slate-400 text-sm sm:text-base">{{ $t('contact.location') }}</span>
               </div>
             </div>
             
@@ -48,7 +48,7 @@
                   </svg>
                 </div>
                 <div class="flex-grow min-w-0">
-                  <h3 class="text-white font-medium mb-1 group-hover:text-indigo-300 transition-colors">Email</h3>
+                  <h3 class="text-white font-medium mb-1 group-hover:text-indigo-300 transition-colors">{{ $t('contact.email') }}</h3>
                   <a href="mailto:contact@champagnedevops.fr" class="text-indigo-400 hover:text-indigo-300 transition-colors text-base sm:text-lg whitespace-nowrap">
                     contact@champagnedevops.fr
                   </a>
@@ -63,7 +63,7 @@
                   </svg>
                 </div>
                 <div class="flex-grow min-w-0">
-                  <h3 class="text-white font-medium mb-2 sm:mb-3 group-hover:text-indigo-300 transition-colors">Réseaux sociaux</h3>
+                  <h3 class="text-white font-medium mb-2 sm:mb-3 group-hover:text-indigo-300 transition-colors">{{ $t('contact.social') }}</h3>
                   <div class="flex flex-col xs:flex-row gap-2 sm:gap-3">
                     <a href="https://github.com/captainigl00" target="_blank" 
                       class="inline-flex items-center px-3 sm:px-4 py-2 bg-slate-700/50 text-white rounded-lg text-sm sm:text-base hover:bg-slate-600/50 transition duration-300 hover:transform hover:scale-105">
@@ -96,11 +96,13 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+const { $t } = useNuxtApp()
 // Meta pour le SEO
 useHead({
-  title: 'Contact - Matheo Champagne',
+  title: computed(() => $t('contact.metaTitle')),
   meta: [
-    { name: 'description', content: 'Contactez Matheo Champagne pour discuter de vos projets DevOps et de développement' }
+    { name: 'description', content: computed(() => $t('contact.metaDescription')) }
   ]
 })
 </script>

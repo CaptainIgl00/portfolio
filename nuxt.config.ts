@@ -9,8 +9,24 @@ export default defineNuxtConfig({
     '~/assets/animations.css'
   ],
   
-  // Configuration Tailwind
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image', 'nuxt-gtag'],
+  // Configuration Tailwind et i18n
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image', 'nuxt-gtag', '@nuxtjs/i18n'],
+
+  // Configuration i18n
+  i18n: {
+    locales: [
+      { code: 'fr', name: 'Français', iso: 'fr-FR', file: 'fr.json' },
+      { code: 'en', name: 'English', iso: 'en-US', file: 'en.json' }
+    ],
+    defaultLocale: 'fr',
+    langDir: 'locales/',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    }
+  },
   
   // Configuration Google Analytics
   gtag: {
@@ -65,8 +81,10 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
         { name: 'description', content: 'Portfolio de Matheo Champagne, Ingénieur DevOps spécialisé en infrastructure cloud et développement' },
-        { 
-          'http-equiv': 'Content-Security-Policy', 
+        { property: 'og:locale', content: 'fr_FR' },
+        { property: 'og:locale:alternate', content: 'en_US' },
+        {
+          'http-equiv': 'Content-Security-Policy',
           content: "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://region1.google-analytics.com; img-src 'self' data: https: https://www.google-analytics.com https://www.googletagmanager.com https://*.google-analytics.com;"
         },
         { name: 'keywords', content: 'DevOps, Infrastructure, Cloud, Kubernetes, Docker, Python, FastAPI, Portfolio' },
@@ -93,8 +111,11 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'manifest', href: '/manifest.webmanifest' },
+        { rel: 'manifest', href: '/manifest-fr.webmanifest' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/icon-192x192.png' },
+        { rel: 'alternate', hreflang: 'fr', href: 'https://champagnedevops.fr' },
+        { rel: 'alternate', hreflang: 'en', href: 'https://champagnedevops.fr/en' },
+        { rel: 'alternate', hreflang: 'x-default', href: 'https://champagnedevops.fr' }
       ]
     }
   },

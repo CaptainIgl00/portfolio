@@ -4,22 +4,22 @@
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
       </svg>
-      Retour aux projets
+      {{ $t('project.back') }}
     </NuxtLink>
 
     <div class="project-grid">
       <div class="project-content">
         <div class="project-header">
-          <h1>{{ project.title }}</h1>
+          <h1>{{ project.title[$i18n.locale] }}</h1>
           <div class="project-tags">
             <span v-for="tag in project.tags" :key="tag" class="tag">
-              {{ tag }}
+              {{ $t('projects.filters.' + tag) }}
             </span>
           </div>
         </div>
 
         <div class="project-image" v-if="project.image">
-          <NuxtImg :src="project.image" :alt="project.title" loading="lazy" />
+          <NuxtImg :src="project.image" :alt="project.title[$i18n.locale]" loading="lazy" />
         </div>
 
         <div class="project-links" v-if="project.demoLink || project.codeLink">
@@ -27,13 +27,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
             </svg>
-            Voir la démo
+            {{ $t('project.demo') }}
           </a>
           <a v-if="project.codeLink" :href="project.codeLink" target="_blank" class="btn btn-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
             </svg>
-            Voir le code
+            {{ $t('project.code') }}
           </a>
         </div>
 
@@ -42,12 +42,12 @@
 
       <div class="project-sidebar">
         <div class="project-highlights" v-if="project.highlights">
-          <h2>Points clés</h2>
+          <h2>{{ $t('project.keyPoints') }}</h2>
           <div class="highlights-grid">
             <div class="highlight-item" v-for="(highlight, index) in project.highlights" :key="index">
               <div class="highlight-icon" v-html="highlight.icon"></div>
-              <h3>{{ highlight.title }}</h3>
-              <p>{{ highlight.description }}</p>
+              <h3>{{ highlight.title[$i18n.locale] }}</h3>
+              <p>{{ highlight.description[$i18n.locale] }}</p>
             </div>
           </div>
         </div>
@@ -57,8 +57,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { marked } from 'marked';
+import { ref, onMounted } from 'vue'
+import { marked } from 'marked'
+const { $i18n } = useNuxtApp()
 
 const props = defineProps({
   project: {
@@ -72,22 +73,25 @@ const markdownContent = ref('');
 onMounted(async () => {
   try {
     if (props.project.markdownFile) {
-      const response = await fetch(`/projects/markdown/${props.project.markdownFile}`);
+      const file = $i18n.locale.value === 'en'
+        ? props.project.markdownFile.replace('.md', '-en.md')
+        : props.project.markdownFile
+      const response = await fetch(`/projects/markdown/${file}`)
       if (response.ok) {
-        const markdown = await response.text();
-        markdownContent.value = marked(markdown);
+        const markdown = await response.text()
+        markdownContent.value = marked(markdown)
       } else {
         // Fallback vers la description si le fichier markdown n'existe pas
-        markdownContent.value = `<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`;
+        markdownContent.value = `<div class=\"project-description\"><h2>Description</h2><p>${props.project.description[$i18n.locale.value]}</p></div>`
       }
     } else {
       // Fallback vers la description si pas de fichier markdown
-      markdownContent.value = `<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`;
+      markdownContent.value = `<div class=\"project-description\"><h2>Description</h2><p>${props.project.description[$i18n.locale.value]}</p></div>`
     }
   } catch (error) {
-    console.error('Erreur lors du chargement du markdown:', error);
+    console.error('Erreur lors du chargement du markdown:', error)
     // Fallback vers la description en cas d'erreur
-    markdownContent.value = `<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`;
+    markdownContent.value = `<div class=\"project-description\"><h2>Description</h2><p>${props.project.description[$i18n.locale.value]}</p></div>`
   }
 });
 </script>
