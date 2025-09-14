@@ -42,7 +42,7 @@ export default defineNuxtConfig({
         { name: 'color-scheme', content: 'dark' },
         { 
           'http-equiv': 'Content-Security-Policy', 
-          content: "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com;"
+          content: "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://region1.google-analytics.com; img-src 'self' data: https: https://www.google-analytics.com https://www.googletagmanager.com https://*.google-analytics.com;"
         }
       ],
       link: [
