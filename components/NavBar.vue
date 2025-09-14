@@ -13,9 +13,9 @@
       </button>
       
       <div class="navbar-links" :class="{ 'active': isMenuOpen }">
-        <router-link 
-          v-for="link in links" 
-          :key="link.path" 
+        <router-link
+          v-for="link in links"
+          :key="link.path"
           :to="link.path"
           class="navbar-link"
           @click="isMenuOpen = false"
@@ -23,20 +23,22 @@
           <span class="link-icon">{{ link.icon }}</span>
           {{ link.name }}
         </router-link>
+        <LanguageSwitcher class="ml-4" />
       </div>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-
-const links = [
-  { name: 'Accueil', path: '/', icon: '🏠' },
-  { name: 'À propos', path: '/about', icon: '👤' },
-  { name: 'Projets', path: '/projects', icon: '🚀' },
-  { name: 'Contact', path: '/contact', icon: '📧' }
-];
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import LanguageSwitcher from '~/components/LanguageSwitcher.vue';
+const { t } = useI18n();
+const links = computed(() => [
+  { name: t('nav.home'), path: '/', icon: '🏠' },
+  { name: t('nav.about'), path: '/about', icon: '👤' },
+  { name: t('nav.projects'), path: '/projects', icon: '🚀' },
+  { name: t('nav.contact'), path: '/contact', icon: '📧' }
+]);
 
 const isMenuOpen = ref(false);
 const isScrolled = ref(false);

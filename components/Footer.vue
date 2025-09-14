@@ -5,14 +5,14 @@
         <div class="footer-brand">
           <router-link to="/" class="footer-logo">MG</router-link>
           <span class="footer-divider">|</span>
-          <p class="footer-tagline">Ingénieur DevOps</p>
+          <p class="footer-tagline">{{ $t('hero.subtitle') }}</p>
         </div>
         
         <div class="footer-links">
-          <router-link to="/" class="footer-link">Accueil</router-link>
-          <router-link to="/about" class="footer-link">À propos</router-link>
-          <router-link to="/projects" class="footer-link">Projets</router-link>
-          <router-link to="/contact" class="footer-link">Contact</router-link>
+          <router-link to="/" class="footer-link">{{ $t('nav.home') }}</router-link>
+          <router-link to="/about" class="footer-link">{{ $t('nav.about') }}</router-link>
+          <router-link to="/projects" class="footer-link">{{ $t('nav.projects') }}</router-link>
+          <router-link to="/contact" class="footer-link">{{ $t('nav.contact') }}</router-link>
         </div>
 
         <div class="footer-social">
@@ -30,7 +30,7 @@
       </div>
       
       <div class="footer-bottom">
-        <p class="copyright">© {{ currentYear }} Matheo Champagne. Tous droits réservés.</p>
+        <p class="copyright">© {{ currentYear }} Matheo Champagne. {{ $t('footer.rights') }}.</p>
       </div>
     </div>
   </footer>

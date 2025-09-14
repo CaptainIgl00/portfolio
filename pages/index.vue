@@ -6,17 +6,17 @@
     <header class="hero" data-section="hero">
       <div class="hero-content">
         <div class="container">
-          <h1 class="glitch" data-text="Matheo Champagne">Matheo Champagne</h1>
-          <p class="tagline slide-in-right">Ingénieur DevOps</p>
+          <h1 class="glitch" :data-text="$t('hero.title')">{{ $t('hero.title') }}</h1>
+          <p class="tagline slide-in-right">{{ $t('hero.subtitle') }}</p>
           <div class="typewriter">
-            <h2>Je développe <span class="accent" ref="typewriterText"></span></h2>
+            <h2>{{ $t('hero.description') }} <span class="accent" ref="typewriterText"></span></h2>
           </div>
           <div class="cta-buttons">
             <NuxtLink to="/projects" class="btn btn-primary">
-              <span class="btn-content">Voir mes projets</span>
+              <span class="btn-content">{{ $t('projects.title') }}</span>
             </NuxtLink>
             <NuxtLink to="/contact" class="btn btn-secondary">
-              <span class="btn-content">Me contacter</span>
+              <span class="btn-content">{{ $t('contact.title') }}</span>
             </NuxtLink>
           </div>
         </div>
@@ -129,19 +129,20 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Background3D from '~/components/Background3D.vue'
 import SkillCard from '~/components/SkillCard.vue'
 import { projects } from '~/data/projects'
 import { getCertificationsCount } from '~/data/certifications'
+const { t } = useI18n()
 
 // Meta pour le SEO
 useHead({
-  title: 'Matheo Champagne - Ingénieur DevOps',
+  title: computed(() => t('hero.title')),
   meta: [
-    { name: 'description', content: 'Portfolio de Matheo Champagne, Ingénieur DevOps spécialisé en infrastructure cloud et développement' }
+    { name: 'description', content: computed(() => t('hero.description')) }
   ]
 })
 

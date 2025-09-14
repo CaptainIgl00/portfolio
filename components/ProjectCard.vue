@@ -7,7 +7,7 @@
     <div class="project-image" :class="{ 'image-hovered': isHovered }">
       <div class="image-overlay"></div>
       <div v-if="project.image" class="real-image">
-        <NuxtImg :src="project.image" :alt="project.title" loading="lazy" />
+        <NuxtImg :src="project.image" :alt="project.title[$i18n.locale]" loading="lazy" />
       </div>
       <div v-else class="placeholder-image">
         <span>{{ project.title.charAt(0) }}</span>
@@ -17,36 +17,36 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
           </svg>
-          Demo
+          {{ $t('project.demo') }}
         </a>
         <a v-if="project.codeLink" :href="project.codeLink" target="_blank" class="quick-action-btn">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
           </svg>
-          Code
+          {{ $t('project.code') }}
         </a>
       </div>
     </div>
 
     <div class="project-info">
-      <h2>{{ project.title }}</h2>
+      <h2>{{ project.title[$i18n.locale] }}</h2>
       <div class="project-tags">
-        <span 
-          v-for="tag in project.tags" 
-          :key="tag" 
+        <span
+          v-for="tag in project.tags"
+          :key="tag"
           class="tag"
           @click="$emit('filter-by-tag', tag)"
         >
-          {{ tag }}
+          {{ $t('projects.filters.' + tag) }}
         </span>
       </div>
       <p class="project-description">
-        {{ project.description }}
+        {{ project.description[$i18n.locale] }}
       </p>
 
       <div class="project-links">
         <button @click="navigateToDetails" class="btn btn-primary">
-          <span class="btn-content">Voir plus</span>
+          <span class="btn-content">{{ $t('project.seeMore') }}</span>
         </button>
       </div>
     </div>
@@ -56,6 +56,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
+const { $i18n, $t } = useNuxtApp()
 
 const router = useRouter();
 const props = defineProps({

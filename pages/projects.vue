@@ -1,7 +1,7 @@
 <template>
   <div class="projects">
     <div class="container">
-      <h1 class="gradient-title" data-section="projects-header">Mes Projets</h1>
+      <h1 class="gradient-title" data-section="projects-header">{{ $t('projects.title') }}</h1>
       
       <ProjectFilter
         v-model="activeFilter"
@@ -27,10 +27,11 @@ import ProjectGrid from '~/components/ProjectGrid.vue'
 import { projects as projectsList } from '~/data/projects'
 
 // Meta pour le SEO
+const { $t } = useNuxtApp()
 useHead({
-  title: 'Projets - Matheo Champagne',
+  title: computed(() => $t('projects.metaTitle')),
   meta: [
-    { name: 'description', content: 'Découvrez les projets de Matheo Champagne en DevOps et développement' }
+    { name: 'description', content: computed(() => $t('projects.metaDescription')) }
   ]
 })
 
