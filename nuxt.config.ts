@@ -39,7 +39,11 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
         { name: 'description', content: 'Portfolio de Matheo Champagne, Ingénieur DevOps spécialisé en infrastructure cloud et développement' },
         { name: 'theme-color', content: '#0f172a' },
-        { name: 'color-scheme', content: 'dark' }
+        { name: 'color-scheme', content: 'dark' },
+        { 
+          'http-equiv': 'Content-Security-Policy', 
+          content: "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com;"
+        }
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },

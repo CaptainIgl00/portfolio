@@ -1,11 +1,7 @@
-{
-  admin off
-}
-
 champagnedevops.fr, www.champagnedevops.fr {
   encode zstd gzip
   root * /srv/www/portfolio/current
-  try_files {path} /index.html
+  try_files {path} {path}/index.html /index.html
   file_server
 
   header {
@@ -24,7 +20,7 @@ champagnedevops.fr, www.champagnedevops.fr {
     X-XSS-Protection "1; mode=block"
     
     # CSP pour plus de sécurité (ajuste selon tes besoins)
-    Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https:;"
+    Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https:;"
   }
 
   # Gestion des erreurs
