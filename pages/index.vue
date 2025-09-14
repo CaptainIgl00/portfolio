@@ -145,7 +145,6 @@ useHead({
   ]
 })
 
-console.log('Chargement de Home.vue')
 
 gsap.registerPlugin(ScrollTrigger)
 

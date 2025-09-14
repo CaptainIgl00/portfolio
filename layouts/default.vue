@@ -6,6 +6,8 @@
         <slot />
       </main>
       <Footer />
+      <PWAInstallPrompt />
+      <PWAStatus />
     </div>
   </div>
 </template>
@@ -13,6 +15,8 @@
 <script setup>
 import NavBar from '~/components/NavBar.vue'
 import Footer from '~/components/Footer.vue'
+import PWAInstallPrompt from '~/components/PWAInstallPrompt.vue'
+import PWAStatus from '~/components/PWAStatus.vue'
 </script>
 
 <style>
