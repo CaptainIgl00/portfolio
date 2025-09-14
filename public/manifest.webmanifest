@@ -6,8 +6,8 @@
   "background_color": "#0f172a",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "https://champagnedevops.fr/",
+  "start_url": "https://champagnedevops.fr/",
   "lang": "fr",
   "categories": ["portfolio", "devops", "technology"],
   "screenshots": [
