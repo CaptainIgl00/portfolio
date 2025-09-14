@@ -18,7 +18,7 @@
       
       <div class="max-w-4xl mx-auto px-2 sm:px-4">
         <!-- Contact Info Section -->
-        <div class="bg-slate-800/30 backdrop-blur-sm border border-slate-700/30 rounded-xl sm:rounded-2xl p-4 sm:p-8 lg:p-12 transition duration-300 hover:border-indigo-500/20 shadow-xl">
+        <div class="bg-slate-800/30 backdrop-blur-sm border border-slate-700/30 rounded-xl sm:rounded-2xl p-4 sm:p-8 lg:p-12 transition duration-300 hover:border-indigo-500/20 shadow-xl" data-section="contact-info">
           <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
             <div>
               <h2 class="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-white to-indigo-300 bg-clip-text text-transparent mb-4 sm:mb-6">

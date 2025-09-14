@@ -25,7 +25,7 @@
       </div>
 
       <!-- Compétences -->
-      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0">
+      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0" data-section="skills">
         <h2 class="section-title">Compétences Techniques</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
           <SkillCard>
@@ -58,7 +58,7 @@
       </section>
 
       <!-- Expérience -->
-      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0">
+      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0" data-section="experience">
         <h2 class="section-title">Expérience Professionnelle</h2>
         <div class="relative py-2 sm:py-8 grid gap-3 sm:gap-8">
           <div class="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary-300/30 to-primary-300/10"></div>
@@ -231,7 +231,7 @@
       </section>
 
       <!-- Certifications -->
-      <section class="mb-8 sm:mb-12 lg:mb-16 px-2 sm:px-0">
+      <section class="mb-8 sm:mb-12 lg:mb-16 px-2 sm:px-0" data-section="certifications">
         <h2 class="section-title">Certifications</h2>
         <div class="flex justify-center">
           <div class="w-full sm:w-[28rem] md:w-96">
@@ -257,7 +257,7 @@
       </section>
 
       <!-- Projets Personnels -->
-      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0">
+      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0" data-section="personal-projects">
         <h2 class="section-title">Projets Personnels</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
           <SkillCard>
@@ -315,7 +315,7 @@
       </section>
 
       <!-- Formation -->
-      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0">
+      <section class="mb-4 sm:mb-12 lg:mb-16 px-1 sm:px-0" data-section="education">
         <h2 class="section-title">Formation</h2>
         <div class="relative py-2 sm:py-8 grid gap-3 sm:gap-8">
           <div class="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary-300/30 to-primary-300/10"></div>
@@ -370,7 +370,7 @@
       </section>
 
       <!-- Langues -->
-      <section class="px-1 sm:px-0">
+      <section class="px-1 sm:px-0" data-section="languages">
         <h2 class="section-title">Langues</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
           <SkillCard>
