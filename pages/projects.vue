@@ -1,7 +1,7 @@
 <template>
   <div class="projects">
     <div class="container">
-      <h1 class="gradient-title">Mes Projets</h1>
+      <h1 class="gradient-title" data-section="projects-header">Mes Projets</h1>
       
       <ProjectFilter
         v-model="activeFilter"
@@ -12,6 +12,7 @@
       <ProjectGrid
         :projects="filteredProjects"
         @filter-by-tag="setFilter"
+        data-section="projects-grid"
       />
     </div>
   </div>
