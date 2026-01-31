@@ -43,7 +43,8 @@ export const projects = [
     tags: ["DevOps", "IA"],
     demoLink: "https://www.airbus.com/en/newsroom/press-releases/2023-01-airbus-to-provide-poland-with-a-very-high-resolution-optical",
     codeLink: null,
-    image: "https://www.airbus.com/sites/g/files/jlcbta136/files/styles/airbus_1440x1440/public/2023-01/pleiades_neo_artistview.webp?itok=Kz_RZj7j",
+    // NOTE: external Airbus CDN URLs changed and were returning 404 in prod; use a local asset for stability.
+    image: "/projects/optical-comms.png",
     markdownFile: "poleos.md",
     slug: "poleos",
     highlights: [
@@ -78,7 +79,8 @@ export const projects = [
     tags: ["DevOps", "Web", "IoT"],
     demoLink: "https://connectivity.esa.int/projects/hts-free-hopper",
     codeLink: null,
-    image: "https://connectivity.esa.int/sites/default/files/inline-images/HTSFreeHopper_logo.png",
+    // NOTE: external ESA image URL returns 404; use local asset.
+    image: "/projects/beam-hopping.png",
     markdownFile: "freehopper.md",
     slug: "freehopper",
     highlights: [
@@ -126,7 +128,8 @@ export const projects = [
     tags: ["DevOps", "IoT"],
     demoLink: "https://www.airbus.com/en/newsroom/news/2024-12-airbus-and-partners-demonstrate-very-high-speed-optical-link-between-earth",
     codeLink: null,
-    image: "https://www.airbus.com/sites/g/files/jlcbta136/files/styles/airbus_1440x1440/public/2024-12/Airbus-built-Badr-8-satellite-for-Arabsat-with-TELEO-Copyright-Airbus.webp?itok=euwhwkd7",
+    // NOTE: external Airbus CDN URL returns 404; use local asset.
+    image: "/projects/optical-comms.png",
     markdownFile: "madiran.md",
     slug: "madiran"
   },
