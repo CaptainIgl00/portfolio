@@ -406,11 +406,8 @@
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import ProfileCard from '~/components/ProfileCard.vue'
-import TimelineItem from '~/components/TimelineItem.vue'
-import SkillCard from '~/components/SkillCard.vue'
-import ProgressBar from '~/components/ProgressBar.vue'
 import { certifications } from '~/data/certifications'
+// Components auto-imported by Nuxt
 
 // Meta pour le SEO
 useHead({
@@ -420,7 +417,7 @@ useHead({
   ]
 })
 
-gsap.registerPlugin(ScrollTrigger)
+// GSAP déjà enregistré dans le plugin
 
 onMounted(() => {
   // Animation des sections au scroll

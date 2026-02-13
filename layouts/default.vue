@@ -11,8 +11,7 @@
 </template>
 
 <script setup>
-import NavBar from '~/components/NavBar.vue'
-import Footer from '~/components/Footer.vue'
+// Components auto-imported by Nuxt
 </script>
 
 <style>

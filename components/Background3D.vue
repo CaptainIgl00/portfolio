@@ -235,12 +235,13 @@ onMounted(() => {
   };
   
   window.addEventListener('mousemove', onMouseMove, { passive: true });
-  
+
   // Animation
   let time = 0;
+  let animationId;
   function animate() {
-    requestAnimationFrame(animate);
-    
+    animationId = requestAnimationFrame(animate);
+
     time += 0.001;
     
     // Mouvement fluide de la souris
@@ -277,7 +278,11 @@ onMounted(() => {
   onUnmounted(() => {
     window.removeEventListener('mousemove', onMouseMove);
     window.removeEventListener('resize', onResize);
-    
+
+    if (animationId) {
+      cancelAnimationFrame(animationId);
+    }
+
     points.geometry.dispose();
     points.material.dispose();
     renderer.dispose();

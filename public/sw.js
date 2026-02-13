@@ -42,7 +42,7 @@ self.addEventListener('activate', (event) => {
   self.clients.claim()
 })
 
-// Interception des requêtes - Stratégie cache d'abord pour les assets statiques
+// Interception des requêtes - Stratégie adaptée selon le type de ressource
 self.addEventListener('fetch', (event) => {
   // Ignorer les requêtes non-HTTP
   if (!event.request.url.startsWith('http')) {
@@ -50,31 +50,31 @@ self.addEventListener('fetch', (event) => {
   }
 
   const url = new URL(event.request.url)
-  
+
   // Stratégie différente selon le type de ressource
   if (event.request.method === 'GET') {
-    // Pour les pages HTML - Cache First
+    // Pour les pages HTML - Network First (toujours la dernière version après deploy)
     if (event.request.destination === 'document') {
       event.respondWith(
-        caches.match(event.request)
-          .then((cachedResponse) => {
-            if (cachedResponse) {
-              return cachedResponse
+        fetch(event.request)
+          .then((response) => {
+            if (response.status === 200) {
+              const responseClone = response.clone()
+              caches.open(CACHE_NAME)
+                .then((cache) => {
+                  cache.put(event.request, responseClone)
+                })
             }
-            // Si pas en cache, essayer le réseau
-            return fetch(event.request)
-              .then((response) => {
-                if (response.status === 200) {
-                  const responseClone = response.clone()
-                  caches.open(CACHE_NAME)
-                    .then((cache) => {
-                      cache.put(event.request, responseClone)
-                    })
+            return response
+          })
+          .catch(() => {
+            // Si réseau échoue, utiliser le cache
+            return caches.match(event.request)
+              .then((cachedResponse) => {
+                if (cachedResponse) {
+                  return cachedResponse
                 }
-                return response
-              })
-              .catch(() => {
-                // Si réseau échoue, retourner la page d'accueil
+                // Fallback sur la page d'accueil
                 return caches.match('/')
               })
           })

@@ -132,10 +132,9 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Background3D from '~/components/Background3D.vue'
-import SkillCard from '~/components/SkillCard.vue'
 import { projects } from '~/data/projects'
 import { getCertificationsCount } from '~/data/certifications'
+// Components auto-imported by Nuxt
 
 // Meta pour le SEO
 useHead({
@@ -145,8 +144,7 @@ useHead({
   ]
 })
 
-
-gsap.registerPlugin(ScrollTrigger)
+// GSAP déjà enregistré dans le plugin
 
 // Texte à afficher dans l'effet machine à écrire
 const typewriterText = ref(null)

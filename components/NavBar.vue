@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar" :class="{ 'navbar-scrolled': isScrolled }">
     <div class="container">
-      <router-link to="/" class="navbar-logo">
+      <NuxtLink to="/" class="navbar-logo">
         <span class="logo-text">MC</span>
         <span class="logo-full">Matheo Champagne</span>
-      </router-link>
+      </NuxtLink>
       
       <button class="mobile-menu-button" @click="isMenuOpen = !isMenuOpen" :aria-label="isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'" :aria-expanded="isMenuOpen">
         <span class="bar"></span>
@@ -13,7 +13,7 @@
       </button>
       
       <div class="navbar-links" :class="{ 'active': isMenuOpen }">
-        <router-link 
+        <NuxtLink 
           v-for="link in links" 
           :key="link.path" 
           :to="link.path"
@@ -22,7 +22,7 @@
         >
           <span class="link-icon">{{ link.icon }}</span>
           {{ link.name }}
-        </router-link>
+        </NuxtLink>
       </div>
     </div>
   </nav>

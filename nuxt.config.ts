@@ -65,10 +65,6 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
         { name: 'description', content: 'Portfolio de Matheo Champagne, Ingénieur DevOps spécialisé en infrastructure cloud et développement' },
-        { 
-          'http-equiv': 'Content-Security-Policy', 
-          content: "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://region1.google-analytics.com; img-src 'self' data: https: https://www.google-analytics.com https://www.googletagmanager.com https://*.google-analytics.com;"
-        },
         { name: 'keywords', content: 'DevOps, Infrastructure, Cloud, Kubernetes, Docker, Python, FastAPI, Portfolio, Matheo Champagne, Ingénieur DevOps, champagnedevops.fr' },
         { name: 'author', content: 'Matheo Champagne' },
         { name: 'robots', content: 'index, follow' },

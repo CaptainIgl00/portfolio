@@ -9,7 +9,7 @@ echo "🚀 Déploiement du portfolio - Release: $REL"
 
 # Build local
 echo "📦 Installation des dépendances..."
-npm install --frozen-lockfile
+npm ci
 
 echo "🔨 Build du projet..."
 npm run build
