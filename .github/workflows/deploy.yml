@@ -20,7 +20,7 @@ jobs:
 
       - name: 🔨 Install dependencies and build
         run: |
-          npm ci --frozen-lockfile
+          npm ci
           npm run build
 
       - name: 🔑 Install SSH key
