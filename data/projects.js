@@ -69,7 +69,7 @@ export const projects = [
     tags: ["DevOps", "Web", "IoT"],
     demoLink: "https://connectivity.esa.int/projects/hts-free-hopper",
     codeLink: null,
-    image: "/projects/freehopper-external.svg",
+    image: "/projects/freehopper-architecture.png",
     markdownFile: "freehopper.md",
     slug: "freehopper",
     highlights: [
