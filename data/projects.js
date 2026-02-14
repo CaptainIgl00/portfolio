@@ -3,7 +3,7 @@ export const projects = [
     title: "Brasserie Chez Ju",
     description: "Développement et déploiement d'un site web pour un restaurant traditionnel français. Stack technique : Nuxt 3, FastAPI, Directus CMS, PostgreSQL, Docker, Traefik.",
     tags: ["Web", "DevOps"],
-    demoLink: "https://brasseriechezju.com",
+    demoLink: "https://brasseriechezju.champagnedevops.fr",
     codeLink: "https://github.com/CaptainIgl00/BrasserieChezJu",
     image: "/projects/planche_charcuterie.jpg",
     markdownFile: "brasserie-chez-ju.md",
