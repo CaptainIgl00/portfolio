@@ -114,7 +114,7 @@
               <span class="tag">Frontend</span>
             </div>
             <div class="featured-project-links">
-              <a href="https://brasseriechezju.com" target="_blank" class="btn btn-primary">
+              <a href="https://brasseriechezju.champagnedevops.fr" target="_blank" class="btn btn-primary">
                 <span class="btn-content">Voir le site</span>
               </a>
               <a href="https://github.com/CaptainIgl00/BrasserieChezJu" target="_blank" class="btn btn-secondary">
