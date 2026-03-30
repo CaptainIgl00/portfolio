@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ProjectFilter from '~/components/ProjectFilter.vue'
@@ -33,8 +33,6 @@ useHead({
     { name: 'description', content: 'Découvrez les projets de Matheo Champagne en DevOps et développement' }
   ]
 })
-
-gsap.registerPlugin(ScrollTrigger)
 
 // Liste des filtres disponibles
 const filters = ['Tous', 'Web', 'DevOps', 'IoT', 'IA', 'Automatisation']
@@ -85,6 +83,11 @@ onMounted(() => {
     duration: 0.8,
     ease: 'power3.out'
   })
+})
+
+onUnmounted(() => {
+  // Kill tous les ScrollTrigger pour éviter les fuites de mémoire
+  ScrollTrigger.getAll().forEach(t => t.kill())
 })
 </script>
 

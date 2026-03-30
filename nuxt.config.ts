@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV === 'development' },
   compatibilityDate: '2025-09-13',
   
   // Configuration CSS
@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   
   // Configuration Google Analytics
   gtag: {
-    id: 'G-NM8LB6JNV6',
+    id: process.env.NUXT_PUBLIC_GTAG_ID || 'G-NM8LB6JNV6',
     config: {
       cookie_flags: 'SameSite=None;Secure',
       send_page_view: false,
@@ -33,11 +33,9 @@ export default defineNuxtConfig({
       routes: ['/', '/about', '/projects', '/contact']
     },
     routeRules: {
-      '/**': {
+      '/_nuxt/**': {
         headers: {
-          'Cache-Control': 'no-cache, no-store, must-revalidate',
-          'Pragma': 'no-cache',
-          'Expires': '0'
+          'Cache-Control': 'public, max-age=31536000, immutable'
         }
       },
       '/sw.js': {
@@ -96,7 +94,6 @@ export default defineNuxtConfig({
         { name: 'apple-mobile-web-app-title', content: 'Portfolio MC' },
         { name: 'msapplication-TileColor', content: '#0f172a' },
         { name: 'msapplication-config', content: '/browserconfig.xml' },
-        { name: 'canonical', content: 'https://champagnedevops.fr' },
         { name: 'format-detection', content: 'telephone=no' },
         { name: 'apple-touch-fullscreen', content: 'yes' },
         { name: 'apple-mobile-web-app-orientations', content: 'portrait' },

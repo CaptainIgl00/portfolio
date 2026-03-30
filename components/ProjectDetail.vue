@@ -23,13 +23,13 @@
         </div>
 
         <div class="project-links" v-if="project.demoLink || project.codeLink">
-          <a v-if="project.demoLink" :href="project.demoLink" target="_blank" class="btn btn-primary">
+          <a v-if="project.demoLink" :href="project.demoLink" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
             </svg>
             Voir la démo
           </a>
-          <a v-if="project.codeLink" :href="project.codeLink" target="_blank" class="btn btn-secondary">
+          <a v-if="project.codeLink" :href="project.codeLink" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
             </svg>
@@ -45,7 +45,7 @@
           <h2>Points clés</h2>
           <div class="highlights-grid">
             <div class="highlight-item" v-for="(highlight, index) in project.highlights" :key="index">
-              <div class="highlight-icon" v-html="highlight.icon"></div>
+              <div class="highlight-icon" v-html="sanitizeSvg(highlight.icon)"></div>
               <h3>{{ highlight.title }}</h3>
               <p>{{ highlight.description }}</p>
             </div>
@@ -59,6 +59,8 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { marked } from 'marked';
+
+const { sanitizeHtml, sanitizeSvg } = useSanitize();
 
 const props = defineProps({
   project: {
@@ -75,19 +77,19 @@ onMounted(async () => {
       const response = await fetch(`/projects/markdown/${props.project.markdownFile}`);
       if (response.ok) {
         const markdown = await response.text();
-        markdownContent.value = marked(markdown);
+        markdownContent.value = sanitizeHtml(marked(markdown));
       } else {
         // Fallback vers la description si le fichier markdown n'existe pas
-        markdownContent.value = `<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`;
+        markdownContent.value = sanitizeHtml(`<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`);
       }
     } else {
       // Fallback vers la description si pas de fichier markdown
-      markdownContent.value = `<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`;
+      markdownContent.value = sanitizeHtml(`<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`);
     }
   } catch (error) {
     console.error('Erreur lors du chargement du markdown:', error);
     // Fallback vers la description en cas d'erreur
-    markdownContent.value = `<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`;
+    markdownContent.value = sanitizeHtml(`<div class="project-description"><h2>Description</h2><p>${props.project.description}</p></div>`);
   }
 });
 </script>

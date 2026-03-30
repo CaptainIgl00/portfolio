@@ -14,13 +14,26 @@ export default defineNuxtPlugin(() => {
           if (newWorker) {
             newWorker.addEventListener('statechange', () => {
               if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                // Nouvelle version disponible
-                console.log('Nouvelle version du service worker disponible')
-                // Auto-reload après 2 secondes pour éviter de déranger l'utilisateur
-                setTimeout(() => {
+                // Afficher un bandeau de mise à jour avec consentement utilisateur
+                const banner = document.createElement('div')
+                banner.setAttribute('role', 'alert')
+                banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 16px;background:#1e293b;border-top:1px solid #6366f1;color:#e2e8f0;font-family:system-ui,sans-serif;font-size:14px;'
+
+                const text = document.createElement('span')
+                text.textContent = 'Nouvelle version disponible'
+
+                const btn = document.createElement('button')
+                btn.textContent = 'Mettre à jour'
+                btn.style.cssText = 'padding:6px 16px;background:#6366f1;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;font-weight:500;'
+
+                btn.addEventListener('click', () => {
                   newWorker.postMessage({ type: 'SKIP_WAITING' })
                   window.location.reload()
-                }, 2000)
+                })
+
+                banner.appendChild(text)
+                banner.appendChild(btn)
+                document.body.appendChild(banner)
               }
             })
           }

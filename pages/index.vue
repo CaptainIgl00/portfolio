@@ -114,10 +114,10 @@
               <span class="tag">Frontend</span>
             </div>
             <div class="featured-project-links">
-              <a href="https://brasseriechezju.champagnedevops.fr" target="_blank" class="btn btn-primary">
+              <a href="https://brasseriechezju.champagnedevops.fr" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 <span class="btn-content">Voir le site</span>
               </a>
-              <a href="https://github.com/CaptainIgl00/BrasserieChezJu" target="_blank" class="btn btn-secondary">
+              <a href="https://github.com/CaptainIgl00/BrasserieChezJu" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                 <span class="btn-content">Code source</span>
               </a>
             </div>
@@ -258,6 +258,8 @@ onUnmounted(() => {
   if (typewriterTimer) {
     clearTimeout(typewriterTimer)
   }
+  // Kill tous les ScrollTrigger pour éviter les fuites de mémoire
+  ScrollTrigger.getAll().forEach(t => t.kill())
 })
 </script>
 

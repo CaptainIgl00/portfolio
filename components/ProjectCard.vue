@@ -13,13 +13,13 @@
         <span>{{ project.title.charAt(0) }}</span>
       </div>
       <div class="project-quick-actions" :class="{ 'show-actions': isHovered }">
-        <a v-if="project.demoLink" :href="project.demoLink" target="_blank" class="quick-action-btn">
+        <a v-if="project.demoLink" :href="project.demoLink" target="_blank" rel="noopener noreferrer" class="quick-action-btn">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
           </svg>
           Demo
         </a>
-        <a v-if="project.codeLink" :href="project.codeLink" target="_blank" class="quick-action-btn">
+        <a v-if="project.codeLink" :href="project.codeLink" target="_blank" rel="noopener noreferrer" class="quick-action-btn">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
           </svg>
@@ -54,7 +54,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
@@ -66,25 +66,12 @@ const props = defineProps({
 });
 
 const isHovered = ref(false);
-const isExpanded = ref(false);
-const description = ref(null);
-const hasLongDescription = ref(false);
-
-const toggleDescription = () => {
-  isExpanded.value = !isExpanded.value;
-};
 
 const navigateToDetails = () => {
   router.push(`/project/${props.project.slug}`);
 };
 
 defineEmits(['filter-by-tag']);
-
-onMounted(() => {
-  if (description.value) {
-    hasLongDescription.value = description.value.scrollHeight > 80;
-  }
-});
 </script>
 
 <style scoped>
@@ -234,26 +221,6 @@ onMounted(() => {
   font-size: 0.875rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-}
-
-.project-description.expanded {
-  max-height: 1000px;
-}
-
-.read-more-btn {
-  background: none;
-  border: none;
-  color: #a5b4fc;
-  font-size: 0.9rem;
-  cursor: pointer;
-  padding: 0;
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.read-more-btn:hover {
-  color: #fff;
-  text-shadow: 0 0 8px rgba(165, 180, 252, 0.5);
 }
 
 .project-links {

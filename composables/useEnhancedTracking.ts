@@ -6,7 +6,6 @@ export const useEnhancedTracking = () => {
       page_path: pagePath,
       page_title: pageName,
       timestamp: new Date().toISOString(),
-      user_agent: navigator.userAgent,
       screen_resolution: `${screen.width}x${screen.height}`,
       viewport_size: `${window.innerWidth}x${window.innerHeight}`
     })

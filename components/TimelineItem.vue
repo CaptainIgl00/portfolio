@@ -25,8 +25,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
-
 const props = defineProps({
   date: {
     type: String,
@@ -40,10 +38,6 @@ const props = defineProps({
     type: String,
     default: ''
   }
-});
-
-const isDev = computed(() => {
-  return process.env.NODE_ENV === 'development';
 });
 </script>
 

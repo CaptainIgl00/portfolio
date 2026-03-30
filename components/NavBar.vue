@@ -6,13 +6,13 @@
         <span class="logo-full">Matheo Champagne</span>
       </NuxtLink>
       
-      <button class="mobile-menu-button" @click="isMenuOpen = !isMenuOpen" :aria-label="isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'" :aria-expanded="isMenuOpen">
+      <button class="mobile-menu-button" @click="isMenuOpen = !isMenuOpen" :aria-label="isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'" :aria-expanded="isMenuOpen" aria-controls="navbar-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
       
-      <div class="navbar-links" :class="{ 'active': isMenuOpen }">
+      <div id="navbar-menu" class="navbar-links" :class="{ 'active': isMenuOpen }">
         <NuxtLink 
           v-for="link in links" 
           :key="link.path" 

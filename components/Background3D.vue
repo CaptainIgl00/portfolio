@@ -14,6 +14,9 @@ let mouseX = 0;
 let mouseY = 0;
 let targetX = 0;
 let targetY = 0;
+let animationId = null;
+let onMouseMove = null;
+let onResize = null;
 
 const particleCount = 3000;
 const particleDistance = 1200;
@@ -227,43 +230,42 @@ onMounted(() => {
   scene.add(points);
   
   // Mouse events
-  const onMouseMove = (event) => {
+  onMouseMove = (event) => {
     // Convertir les coordonnées de la souris en coordonnées NDC (-1 à 1)
     const rect = canvas.value.getBoundingClientRect();
     mouseX = (event.clientX / window.innerWidth) * 2 - 1;
     mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
   };
-  
+
   window.addEventListener('mousemove', onMouseMove, { passive: true });
 
   // Animation
   let time = 0;
-  let animationId;
   function animate() {
     animationId = requestAnimationFrame(animate);
 
     time += 0.001;
-    
+
     // Mouvement fluide de la souris
     targetX += (mouseX - targetX) * 0.1;
     targetY += (mouseY - targetY) * 0.1;
-    
+
     if (points.material.uniforms) {
       points.material.uniforms.uTime.value = time;
       points.material.uniforms.uMouse.value.set(targetX, targetY);
     }
-    
+
     // Rotation douce de la scène
     points.rotation.y = Math.sin(time * 0.5) * 0.3;
     points.rotation.x = Math.cos(time * 0.3) * 0.2;
-    
+
     renderer.render(scene, camera);
   }
-  
+
   animate();
-  
+
   // Resize
-  const onResize = () => {
+  onResize = () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -271,22 +273,30 @@ onMounted(() => {
       points.material.uniforms.uPixelRatio.value = window.devicePixelRatio;
     }
   };
-  
+
   window.addEventListener('resize', onResize);
-  
-  // Cleanup
-  onUnmounted(() => {
+});
+
+// Cleanup au top-level du setup (pas imbriqué dans onMounted)
+onUnmounted(() => {
+  if (onMouseMove) {
     window.removeEventListener('mousemove', onMouseMove);
+  }
+  if (onResize) {
     window.removeEventListener('resize', onResize);
+  }
 
-    if (animationId) {
-      cancelAnimationFrame(animationId);
-    }
+  if (animationId) {
+    cancelAnimationFrame(animationId);
+  }
 
+  if (points) {
     points.geometry.dispose();
     points.material.dispose();
+  }
+  if (renderer) {
     renderer.dispose();
-  });
+  }
 });
 </script>
 

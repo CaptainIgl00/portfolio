@@ -26,7 +26,14 @@ if (!project) {
 useHead({
   title: `${project.title} - Matheo Champagne`,
   meta: [
-    { name: 'description', content: project.description }
+    { name: 'description', content: project.description },
+    { property: 'og:title', content: `${project.title} - Matheo Champagne` },
+    { property: 'og:description', content: project.description },
+    { property: 'og:url', content: `https://champagnedevops.fr/project/${slug}` },
+    { property: 'og:image', content: project.image ? `https://champagnedevops.fr${project.image}` : 'https://champagnedevops.fr/og-default.png' }
+  ],
+  link: [
+    { rel: 'canonical', href: `https://champagnedevops.fr/project/${slug}` }
   ]
 })
 </script>

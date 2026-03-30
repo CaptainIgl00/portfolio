@@ -403,7 +403,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { certifications } from '~/data/certifications'
@@ -435,9 +435,14 @@ onMounted(() => {
     })
   })
 })
+
+onUnmounted(() => {
+  // Kill tous les ScrollTrigger pour éviter les fuites de mémoire
+  ScrollTrigger.getAll().forEach(t => t.kill())
+})
 </script>
 
-<style>
+<style scoped>
 .highlight-text {
   @apply text-primary-300 font-medium hover:text-white hover:shadow-[0_0_8px_rgba(165,180,252,0.5)] transition-all duration-300;
 }
