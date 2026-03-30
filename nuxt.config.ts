@@ -10,16 +10,7 @@ export default defineNuxtConfig({
   ],
   
   // Configuration Tailwind
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image', 'nuxt-gtag'],
-  
-  // Configuration Google Analytics
-  gtag: {
-    id: process.env.NUXT_PUBLIC_GTAG_ID || 'G-NM8LB6JNV6',
-    config: {
-      cookie_flags: 'SameSite=None;Secure',
-      send_page_view: false,
-    }
-  },
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image'],
 
 
   // Configuration du rendu

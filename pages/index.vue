@@ -3,7 +3,7 @@
     <ClientOnly>
       <Background3D />
     </ClientOnly>
-    <header class="hero" data-section="hero">
+    <header class="hero">
       <div class="hero-content">
         <div class="container">
           <h1 class="glitch" data-text="Matheo Champagne">Matheo Champagne</h1>
@@ -23,7 +23,7 @@
       </div>
     </header>
 
-    <section class="intro" data-section="intro">
+    <section class="intro">
       <div class="container">
         <h2 class="section-title glitch" data-text="Expertise">Expertise</h2>
         <div class="skills-grid">
@@ -77,7 +77,7 @@
       </div>
     </section>
 
-    <section class="stats" data-section="stats">
+    <section class="stats">
       <div class="container">
         <div class="stats-grid">
           <div class="stat-card" ref="projectsCount">
@@ -96,7 +96,7 @@
       </div>
     </section>
 
-    <section class="featured-project" data-section="featured-project">
+    <section class="featured-project">
       <div class="container">
         <h2 class="section-title glitch" data-text="Projet à la Une">Projet à la Une</h2>
         <div class="featured-project-card">
