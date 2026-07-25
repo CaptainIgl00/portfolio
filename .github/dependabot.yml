@@ -1,0 +1,70 @@
+version: 2
+
+updates:
+  # ── npm ────────────────────────────────────────────────────────────────────
+  # Grouped so a security bump no longer opens a dozen separate PRs.
+  # Major bumps stay ungrouped on purpose: they need to be reviewed one by one.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: Europe/Paris
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore(deps)
+      prefix-development: chore(deps-dev)
+      include: scope
+    groups:
+      nuxt:
+        patterns:
+          - 'nuxt'
+          - '@nuxt/*'
+          - '@nuxtjs/*'
+          - '@vite-pwa/nuxt'
+        update-types: [minor, patch]
+      vue:
+        patterns:
+          - 'vue'
+          - 'vue-router'
+          - 'pinia'
+          - '@vueuse/*'
+        update-types: [minor, patch]
+      three:
+        patterns:
+          - 'three'
+          - '@types/three'
+        update-types: [minor, patch]
+      # Everything else, minor + patch only.
+      misc:
+        patterns:
+          - '*'
+        exclude-patterns:
+          - 'nuxt'
+          - '@nuxt/*'
+          - '@nuxtjs/*'
+          - '@vite-pwa/nuxt'
+          - 'vue'
+          - 'vue-router'
+          - 'pinia'
+          - '@vueuse/*'
+          - 'three'
+          - '@types/three'
+        update-types: [minor, patch]
+
+  # ── GitHub Actions ─────────────────────────────────────────────────────────
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: Europe/Paris
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: ci
+    groups:
+      actions:
+        patterns:
+          - '*'
