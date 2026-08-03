@@ -17,13 +17,13 @@
     "marked": "^16.2.1",
     "nuxt": "~4.4.8",
     "pinia": "^3.0.3",
-    "three": "^0.180.0",
+    "three": "^0.185.1",
     "vue": "^3.5.21",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.14.0",
-    "@types/three": "^0.180.0",
+    "@types/three": "^0.185.1",
     "@vite-pwa/nuxt": "^1.1.1"
   },
   "overrides": {
