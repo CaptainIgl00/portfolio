@@ -1,4 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+// Découpage manuel des vendors : chaque entrée associe un nom de chunk
+// aux fragments d'identifiant de module qui doivent y atterrir.
+const MANUAL_CHUNKS: ReadonlyArray<readonly [string, readonly string[]]> = [
+  ['three', ['node_modules/three/']],
+  ['gsap', ['node_modules/gsap/']],
+  ['utils', ['node_modules/@vueuse/core/']],
+  ['vendor', ['node_modules/vue/', 'node_modules/vue-router/']]
+]
+
 export default defineNuxtConfig({
   devtools: { enabled: process.env.NODE_ENV === 'development' },
   compatibilityDate: '2025-09-13',
@@ -130,11 +140,14 @@ export default defineNuxtConfig({
     build: {
       rollupOptions: {
         output: {
-          manualChunks: {
-            'vendor': ['vue', 'vue-router'],
-            'three': ['three'],
-            'gsap': ['gsap', 'gsap/ScrollTrigger'],
-            'utils': ['@vueuse/core']
+          // Rolldown (Vite 8) n'accepte plus la forme objet de manualChunks :
+          // le mapping chunk -> modules est exprimé sous forme de fonction.
+          manualChunks(id: string) {
+            for (const [chunk, patterns] of MANUAL_CHUNKS) {
+              if (patterns.some((pattern) => id.includes(pattern))) {
+                return chunk
+              }
+            }
           }
         }
       }
