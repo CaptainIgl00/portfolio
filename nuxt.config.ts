@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { fileURLToPath } from 'node:url'
+import { projects } from './data/projects.js'
 
 // Découpage manuel des vendors : chaque entrée associe un nom de chunk
 // aux fragments d'identifiant de module qui doivent y atterrir.
@@ -8,6 +10,11 @@ const MANUAL_CHUNKS: ReadonlyArray<readonly [string, readonly string[]]> = [
   ['utils', ['node_modules/@vueuse/core/']],
   ['vendor', ['node_modules/vue/', 'node_modules/vue-router/']]
 ]
+
+// Chemin du handler IPX maison (voir server/handlers/ipx.ts) : il remplace celui
+// de @nuxt/image, dont le handler Node bloque le prerender Nitro.
+const IPX_HANDLER = fileURLToPath(new URL('./server/handlers/ipx.ts', import.meta.url))
+const IPX_MODULE_HANDLER = 'image/dist/runtime/server/routes/_ipx'
 
 export default defineNuxtConfig({
   devtools: { enabled: process.env.NODE_ENV === 'development' },
@@ -31,7 +38,16 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
     minify: true,
     prerender: {
-      routes: ['/', '/about', '/projects', '/contact']
+      // Les fiches projet sont prérendues elles aussi : le site est servi en
+      // statique, sans SSR, donc une route non prérendue retombe sur le
+      // index.html de l'accueil et affiche la mauvaise page.
+      routes: [
+        '/',
+        '/about',
+        '/projects',
+        '/contact',
+        ...projects.map((project) => `/project/${project.slug}`)
+      ]
     },
     routeRules: {
       '/_nuxt/**': {
@@ -112,6 +128,32 @@ export default defineNuxtConfig({
     }
   },
   
+  // @nuxt/image enregistre la route /_ipx/** sur son propre handler ; on la
+  // réaffecte au nôtre une fois Nitro initialisé (options.handlers pour le serveur
+  // final, options._config.handlers pour l'instance de prerender qui en est clonée).
+  hooks: {
+    'nitro:build:before'(nitro) {
+      let swapped = 0
+      const swap = (handlers?: Array<{ handler?: string }>) => {
+        for (const handler of handlers || []) {
+          if (typeof handler.handler === 'string' && handler.handler.includes(IPX_MODULE_HANDLER)) {
+            handler.handler = IPX_HANDLER
+            swapped++
+          }
+        }
+      }
+      swap(nitro.options.handlers)
+      swap(nitro.options._config.handlers)
+
+      if (swapped === 0) {
+        console.warn(
+          '[ipx] Aucun handler @nuxt/image remplacé : vérifier IPX_MODULE_HANDLER, ' +
+          'le prerender des images risque de bloquer le build.'
+        )
+      }
+    }
+  },
+
   // Configuration du build
   build: {
     transpile: ['three', 'gsap']

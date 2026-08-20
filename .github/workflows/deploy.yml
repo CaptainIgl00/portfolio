@@ -23,6 +23,30 @@ jobs:
           npm ci
           npm run build
 
+      # Un prerender qui échoue peut faire sortir Nuxt en code 0 avec un
+      # `.output/public` amputé de ses assets : on refuse de déployer ça.
+      - name: ✅ Verify build output
+        run: |
+          set -euo pipefail
+          for path in .output/public/index.html .output/public/_nuxt .output/server/index.mjs; do
+            if [ ! -e "$path" ]; then
+              echo "::error::Build output incomplet : $path est absent"
+              exit 1
+            fi
+          done
+          for route in about contact projects; do
+            if [ ! -f ".output/public/$route/index.html" ]; then
+              echo "::error::Route prérendue manquante : /$route"
+              exit 1
+            fi
+          done
+          entries=$(find .output/public/_nuxt -name '*.js' | wc -l)
+          if [ "$entries" -lt 5 ]; then
+            echo "::error::Seulement $entries bundles JS dans _nuxt, build suspect"
+            exit 1
+          fi
+          echo "Build output OK ($entries bundles JS)"
+
       - name: 🔑 Install SSH key
         run: |
           mkdir -p ~/.ssh

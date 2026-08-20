@@ -12,9 +12,11 @@
     </div>
     <div class="flex-grow text-center md:text-left">
       <h2 class="mb-4 text-3xl font-bold bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent">{{ title }}</h2>
-      <p class="text-lg leading-relaxed text-slate-400">
+      <!-- div et non p : le slot reçoit des paragraphes, et un <p> imbriqué dans
+           un <p> est refermé par le parser HTML, ce qui casse l'hydratation. -->
+      <div class="text-lg leading-relaxed text-slate-400">
         <slot></slot>
-      </p>
+      </div>
     </div>
   </div>
 </template>

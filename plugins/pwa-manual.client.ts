@@ -1,5 +1,11 @@
 export default defineNuxtPlugin(() => {
-  if (process.client && 'serviceWorker' in navigator) {
+  // Jamais en dev : le cache-first du SW resservirait les modules servis par Vite
+  // avec le mauvais Content-Type et empêcherait l'app de démarrer.
+  if (import.meta.dev) {
+    return
+  }
+
+  if (import.meta.client && 'serviceWorker' in navigator) {
 
     // Fonction pour enregistrer le SW
     async function registerServiceWorker() {

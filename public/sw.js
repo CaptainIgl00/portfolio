@@ -51,6 +51,11 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(event.request.url)
 
+  // Ne rien intercepter en dehors de l'origine du site (CDN, analytics, extensions)
+  if (url.origin !== self.location.origin) {
+    return
+  }
+
   // Stratégie différente selon le type de ressource
   if (event.request.method === 'GET') {
     // Pour les pages HTML - Network First (toujours la dernière version après deploy)
