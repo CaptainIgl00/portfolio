@@ -17,7 +17,7 @@ npm run build
 # Déploiement sur le VPS
 echo "📤 Upload vers le VPS..."
 ssh "$REMOTE" "mkdir -p $REMOTE_DIR/releases"
-rsync -az --delete dist/ "$REMOTE:$REMOTE_DIR/releases/$REL/"
+rsync -az --delete .output/public/ "$REMOTE:$REMOTE_DIR/releases/$REL/"
 
 echo "🔄 Activation de la nouvelle release..."
 ssh "$REMOTE" "ln -sfn $REMOTE_DIR/releases/$REL $REMOTE_DIR/current && \

@@ -4,24 +4,25 @@ champagnedevops.fr, www.champagnedevops.fr {
   try_files {path} {path}/index.html /index.html
   file_server
 
-  # Cache long pour assets fingerprintés
-  @assets path_regexp \.(js|css|png|jpg|jpeg|svg|ico|webp|woff|woff2)$
-  header @assets Cache-Control "public, max-age=31536000, immutable"
-
-  # Pas de cache pour HTML (déploiements instantanés)
-  @html path_regexp \.html$
-  header @html Cache-Control "no-cache"
-
-  # Headers de sécurité globaux
   header {
+    # Cache long pour assets fingerprintés
+    @assets path_regexp \\.(js|css|png|jpg|jpeg|svg|ico|webp|woff|woff2)$
+    header @assets Cache-Control "public, max-age=31536000, immutable"
+
+    # Pas de cache pour HTML (déploiements instantanés)
+    @html path_regexp \.html$
+    header @html Cache-Control "no-cache"
+
+    # Sécurité de base
     X-Content-Type-Options nosniff
     Referrer-Policy no-referrer-when-downgrade
     X-Frame-Options DENY
     X-XSS-Protection "1; mode=block"
+    Strict-Transport-Security "max-age=31536000"
+
     Content-Security-Policy "default-src 'self'; img-src 'self' data: https: https://www.google-analytics.com https://www.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https: https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://region1.google-analytics.com;"
   }
 
-  # Gestion des erreurs
   handle_errors {
     @404 expression `{http.error.status_code} == 404`
     handle @404 {
@@ -30,9 +31,43 @@ champagnedevops.fr, www.champagnedevops.fr {
     }
   }
 
-  # Log des accès (optionnel, pour monitoring)
   log {
     output file /var/log/caddy/champagnedevops.fr.log {
+      roll_size 100mb
+      roll_keep 5
+    }
+    format json
+  }
+}
+
+brasseriechezju.champagnedevops.fr {
+  encode zstd gzip
+  root * /srv/www/bcj/current
+  try_files {path} {path}/index.html /index.html
+  file_server
+
+  header {
+    @assets path_regexp \\.(js|css|png|jpg|jpeg|svg|ico|webp|woff|woff2)$
+    header @assets Cache-Control "public, max-age=31536000, immutable"
+    @html path_regexp \.html$
+    header @html Cache-Control "no-cache"
+    X-Content-Type-Options nosniff
+    Referrer-Policy no-referrer-when-downgrade
+    X-Frame-Options DENY
+    X-XSS-Protection "1; mode=block"
+    Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://maps.googleapis.com https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https:;"
+  }
+
+  handle_errors {
+    @404 expression `{http.error.status_code} == 404`
+    handle @404 {
+      rewrite * /index.html
+      file_server
+    }
+  }
+
+  log {
+    output file /var/log/caddy/brasseriechezju.champagnedevops.fr.log {
       roll_size 100mb
       roll_keep 5
     }
